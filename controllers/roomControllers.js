@@ -43,11 +43,6 @@ const getSingleRoom = async (req, res, next) => {
     const room = await Room.findById(req.query.id);
 
     if (!room) {
-      // res.status(404).json({
-      //   success: false,
-      //   error: `Cannot find room with this ID, check your ID!`,
-      // });
-
       return next(
         new ErrorBoundary(`Cannot find room with this ID, check your ID!`, 404)
       );
@@ -66,15 +61,14 @@ const getSingleRoom = async (req, res, next) => {
 };
 
 // update the details of a single room item
-const updateSingleRoom = async (req, res) => {
+const updateSingleRoom = async (req, res, next) => {
   try {
     let room = await Room.findById(req.query.id);
 
     if (!room) {
-      res.status(404).json({
-        success: false,
-        error: `Cannot find room with this ID, check your ID!`,
-      });
+      return next(
+        new ErrorBoundary(`Cannot find room with this ID, check your ID!`, 404)
+      );
     }
 
     // looking for the id first => the body that we going to change/update
@@ -97,15 +91,14 @@ const updateSingleRoom = async (req, res) => {
 };
 
 //! delete the details of a single room item
-const deleteSingleRoom = async (req, res) => {
+const deleteSingleRoom = async (req, res, next) => {
   try {
     const room = await Room.findById(req.query.id);
 
     if (!room) {
-      res.status(404).json({
-        success: false,
-        error: `Cannot find room with this ID, check your ID!`,
-      });
+      return next(
+        new ErrorBoundary(`Cannot find room with this ID, check your ID!`, 404)
+      );
     }
 
     // looking for the id first => the body that we going to change/update

@@ -35,6 +35,8 @@
     "no-console": "off",
     "global-require": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "no-param-reassign": "off",
+    "prefer-const": "off"
   }
 }
