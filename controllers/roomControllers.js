@@ -1,5 +1,7 @@
 import Room from "../models/room";
 
+import ErrorBoundary from "../utils/errorBoundary";
+
 // get all rooms => /api/rooms
 const allRooms = async (req, res) => {
   try {
@@ -36,15 +38,19 @@ const newRoom = async (req, res) => {
 };
 
 // get a single room item
-const getSingleRoom = async (req, res) => {
+const getSingleRoom = async (req, res, next) => {
   try {
     const room = await Room.findById(req.query.id);
 
     if (!room) {
-      res.status(404).json({
-        success: false,
-        error: `Cannot find room with this ID, check your ID!`,
-      });
+      // res.status(404).json({
+      //   success: false,
+      //   error: `Cannot find room with this ID, check your ID!`,
+      // });
+
+      return next(
+        new ErrorBoundary(`Cannot find room with this ID, check your ID!`, 404)
+      );
     }
 
     res.status(200).json({
