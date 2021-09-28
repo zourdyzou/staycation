@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
-import moment from "moment";
+const mongoose = require("mongoose");
+
+const moment = require("moment");
 
 const roomSchema = new mongoose.Schema({
   name: {
@@ -83,19 +84,19 @@ const roomSchema = new mongoose.Schema({
       user: {
         type: mongoose.Schema.ObjectId,
         ref: "User",
-        required: false,
+        required: true,
       },
       name: {
         type: String,
-        required: false,
+        required: true,
       },
       rating: {
         type: Number,
-        required: false,
+        required: true,
       },
       comment: {
         type: String,
-        required: false,
+        required: true,
       },
     },
   ],
@@ -110,4 +111,6 @@ const roomSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model.Room || mongoose.model("Room", roomSchema);
+// export default mongoose.models.Room || mongoose.model("Room", roomSchema);
+
+module.exports = mongoose.models.Room || mongoose.model("Room", roomSchema);

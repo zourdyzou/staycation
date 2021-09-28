@@ -13,4 +13,4 @@ const dbConnect = () => {
     .then((con) => console.log(`connected to local database ${con}`));
 };
 
-export { dbConnect };
+export default dbConnect;

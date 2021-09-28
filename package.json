@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seeder": "node utils/seeder"
   },
   "dependencies": {
     "moment": "^2.29.1",
