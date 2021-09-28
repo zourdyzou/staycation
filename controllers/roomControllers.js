@@ -1,5 +1,6 @@
 import Room from "../models/room";
 
+// get all rooms => /api/rooms
 const allRooms = async (req, res) => {
   try {
     const rooms = await Room.find();
@@ -17,6 +18,7 @@ const allRooms = async (req, res) => {
   }
 };
 
+// create a new room
 const newRoom = async (req, res) => {
   try {
     const room = await Room.create(req.body);
@@ -33,4 +35,28 @@ const newRoom = async (req, res) => {
   }
 };
 
-export { allRooms, newRoom };
+// get a single room item
+const getSingleRoom = async (req, res) => {
+  try {
+    const room = await Room.findById(req.query.id);
+
+    if (!room) {
+      res.status(404).json({
+        success: false,
+        error: `Cannot find room with this ID, check your ID!`,
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      room,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      error: `Sorry cannot retrieve the data: ${error.message}`,
+    });
+  }
+};
+
+export { allRooms, newRoom, getSingleRoom };
