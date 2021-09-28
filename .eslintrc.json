@@ -1,3 +1,39 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["airbnb", "plugin:prettier/recommended", "next/core-web-vitals"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "rules": {
+    "jsx-a11y/href-no-hash": ["off"],
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "import/prefer-default-export": "off",
+    "max-len": [
+      "warn",
+      {
+        "code": 80,
+        "tabWidth": 2,
+        "comments": 80,
+        "ignoreComments": false,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/no-unescaped-entities": "off",
+    "react/no-array-index-key": "off",
+    "no-useless-return": "off",
+    "no-return-assign": "off",
+    "no-console": "off",
+    "global-require": "off",
+    "jsx-a11y/anchor-is-valid": "off"
+  }
 }
