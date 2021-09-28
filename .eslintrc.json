@@ -37,6 +37,7 @@
     "jsx-a11y/anchor-is-valid": "off",
     "consistent-return": "off",
     "no-param-reassign": "off",
-    "prefer-const": "off"
+    "prefer-const": "off",
+    "import/no-anonymous-default-export": "off"
   }
 }

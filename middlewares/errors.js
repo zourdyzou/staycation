@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 // import ErrorBoundary from "../utils/errorBoundary";
 
 export default (err, req, res) => {

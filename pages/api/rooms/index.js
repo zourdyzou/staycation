@@ -2,7 +2,9 @@ import nextConnect from "next-connect";
 import dbConnect from "../../../config/dbConnect";
 import { allRooms, newRoom } from "../../../controllers/roomControllers";
 
-const handler = nextConnect();
+import onError from "../../../middlewares/errors";
+
+const handler = nextConnect({ onError });
 
 dbConnect();
 
