@@ -8,10 +8,10 @@ export const allRoomReducer = (state = { rooms: [] }, action) => {
   switch (action.type) {
     case ALL_ROOM_SUCCESS:
       return {
-        ...state,
         roomsCount: action.payload.roomsCount,
         resPerPage: action.payload.resPerPage,
         filteredRoomsCount: action.payload.filteredRoomsCount,
+        rooms: action.payload,
       };
 
     case ALL_ROOM_FAIL:
