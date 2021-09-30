@@ -1,14 +1,27 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/button-has-type */
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import { RoomItem } from "../components/Room/RoomItem";
 
 export const Home = () => {
   const { rooms: allRooms } = useSelector((state) => state.allRooms.rooms);
+  const { error } = useSelector((state) => state.allRooms);
 
+  useEffect(() => {
+    if (error) {
+      toast.error(`🦄 ${error}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <section id="rooms" className="container mt-5">
       <h2 className="mb-3 ml-2 stays-heading">Stays in New York</h2>

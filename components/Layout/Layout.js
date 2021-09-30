@@ -1,6 +1,9 @@
 import React from "react";
 import Head from "next/head";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
@@ -20,6 +23,7 @@ export const Layout = ({
       </Head>
 
       <Header />
+      <ToastContainer position="top-right" autoClose={5000} />
       {children}
       <Footer />
     </div>
