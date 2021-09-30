@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -7,11 +8,13 @@ export const Header = () => {
       <div className="container">
         <div className="col-3 p-0">
           <div className="navbar-brand">
-            <img
-              style={{ cursor: "pointer" }}
-              src="/images/bookit_logo.png"
-              alt="BookIT"
-            />
+            <Link href="/" passHref>
+              <img
+                style={{ cursor: "pointer" }}
+                src="/images/bookit_logo.png"
+                alt="BookIT"
+              />
+            </Link>
           </div>
         </div>
 
