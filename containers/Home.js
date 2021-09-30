@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 import { RoomItem } from "../components/Room/RoomItem";
 
 export const Home = () => {
-  const { rooms: allRooms } = useSelector((state) => state.allRooms.rooms);
-  const { error } = useSelector((state) => state.allRooms);
+  const { rooms: allRooms, error } = useSelector((state) => state.allRooms);
 
   useEffect(() => {
     if (error) {
