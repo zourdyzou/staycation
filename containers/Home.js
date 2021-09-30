@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { clearError } from "../redux/actions/roomAction";
 import { RoomItem } from "../components/Room/RoomItem";
 
 export const Home = () => {
+  const dispatch = useDispatch();
   const { rooms: allRooms, error } = useSelector((state) => state.allRooms);
 
   useEffect(() => {
@@ -18,6 +20,8 @@ export const Home = () => {
         draggable: true,
         progress: undefined,
       });
+
+      dispatch(clearError());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

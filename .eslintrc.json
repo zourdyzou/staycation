@@ -38,6 +38,7 @@
     "consistent-return": "off",
     "no-param-reassign": "off",
     "prefer-const": "off",
+    "react/button-has-type": "off",
     "import/no-anonymous-default-export": "off"
   }
 }

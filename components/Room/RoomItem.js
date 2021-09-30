@@ -23,7 +23,7 @@ export const RoomItem = ({
         />
         <div className="card-body d-flex flex-column">
           <h5 className="card-title">
-            <Link href={`/room/${id}`} passHref>
+            <Link href={`/rooms/${id}`} passHref>
               <a>{name}</a>
             </Link>
           </h5>
