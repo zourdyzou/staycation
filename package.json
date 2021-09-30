@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
+    "axios": "^0.21.4",
     "moment": "^2.29.1",
     "mongoose": "^6.0.8",
     "next": "11.1.2",
+    "next-absolute-url": "^1.2.2",
     "next-connect": "^0.10.2",
     "next-redux-wrapper": "^7.0.5",
     "react": "17.0.2",
