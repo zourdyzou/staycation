@@ -33,6 +33,7 @@
     "no-useless-return": "off",
     "no-return-assign": "off",
     "no-console": "off",
+    "func-names": "off",
     "global-require": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "consistent-return": "off",
