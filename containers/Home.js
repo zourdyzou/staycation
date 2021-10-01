@@ -67,7 +67,9 @@ export const Home = () => {
         </Link>
         <div className="row">
           {allRooms && allRooms.length === 0 ? (
-            <div className="alert alert-danger">No Rooms Available.</div>
+            <div className="alert alert-danger mt-5 w-100">
+              No Rooms Available.
+            </div>
           ) : (
             allRooms.map((room) => {
               const { _id: id } = room;
