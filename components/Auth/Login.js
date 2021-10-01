@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 
 import { signIn } from "next-auth/client";
 import { toast } from "react-toastify";
@@ -78,7 +78,7 @@ export const Login = () => {
               {loading ? <ButtonLoader /> : "LOGIN"}
             </button>
 
-            <Link passHref href="#" className="float-right mt-3">
+            <Link passHref href="/register" className="float-right mt-3">
               New User?
             </Link>
           </form>
