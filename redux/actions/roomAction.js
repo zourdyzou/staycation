@@ -10,24 +10,28 @@ import {
 } from "../constants/roomConstant";
 
 // get all rooms
-export const getRooms = (req) => async (dispatch) => {
-  try {
-    // get the base origin path
-    const { origin } = absoluteUrl(req);
+export const getRooms =
+  (req, currentPage = 1) =>
+  async (dispatch) => {
+    try {
+      // get the base origin path
+      const { origin } = absoluteUrl(req);
 
-    const { data } = await axios.get(`${origin}/api/rooms`);
+      const { data } = await axios.get(
+        `${origin}/api/rooms?page=${currentPage}`
+      );
 
-    dispatch({
-      type: ALL_ROOM_SUCCESS,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: ALL_ROOM_FAIL,
-      payload: `${error.response.data.message}, please contact our customer services`,
-    });
-  }
-};
+      dispatch({
+        type: ALL_ROOM_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: ALL_ROOM_FAIL,
+        payload: `${error.response.data.message}, please contact our customer services`,
+      });
+    }
+  };
 
 // GET ROOM DETAILS
 export const getRoomDetails = (req, id) => async (dispatch) => {
