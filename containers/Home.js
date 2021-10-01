@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import Link from "next/link";
 
 import { useRouter } from "next/router";
 
@@ -22,7 +23,7 @@ export const Home = () => {
 
   // const [currentPage,setCurrentPage] = useState('')
 
-  let { page = 1 } = router.query;
+  let { location, page = 1 } = router.query;
   page = Number(page);
 
   const handlePagination = (pageNum) => {
@@ -45,14 +46,25 @@ export const Home = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  let count = roomsCount;
+
+  if (location) {
+    count = filteredRoomsCount;
+  }
+
   return (
     <>
       <section id="rooms" className="container mt-5">
-        <h2 className="mb-3 ml-2 stays-heading">Stays in New York</h2>
+        <h2 className="mb-3 ml-2 stays-heading">
+          {location ? `Rooms in ${location}` : "All Places"}
+        </h2>
 
-        <a href="#" className="ml-2 back-to-search">
-          <i className="fa fa-arrow-left" /> Back to Search
-        </a>
+        <Link href="/search" passHref>
+          <a className="ml-2 back-to-search">
+            <i className="fa fa-arrow-left" /> Back to Search
+          </a>
+        </Link>
         <div className="row">
           {allRooms && allRooms.length === 0 ? (
             <div className="alert alert-danger">No Rooms Available.</div>
@@ -65,7 +77,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {resPerPage < roomsCount && (
+      {resPerPage < count && (
         <div className="d-flex justify-content-center mt-5">
           <Pagination
             activePage={page}
