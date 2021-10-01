@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 
@@ -16,7 +17,6 @@ export default NextAuth({
         const { email, password } = credentials;
 
         // check if email and password is exist
-
         if (!email || !password) {
           throw new Error("Please enter email or password");
         }
@@ -41,9 +41,10 @@ export default NextAuth({
   ],
   callbacks: {
     jwt: async (token, user) => {
-      if (user) {
-        token.user = user;
-      }
+      // if (user) {
+      //   token.user = user;
+      // }
+      user && (token.user = user);
 
       return Promise.resolve(token);
     },

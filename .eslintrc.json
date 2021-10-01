@@ -13,6 +13,7 @@
     "jsx-a11y/click-events-have-key-events": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     "max-len": [
       "warn",
       {
@@ -29,6 +30,7 @@
     ],
     "react/jsx-props-no-spreading": "off",
     "react/no-unescaped-entities": "off",
+    "no-return-await": "off",
     "react/no-array-index-key": "off",
     "no-useless-return": "off",
     "no-return-assign": "off",
