@@ -47,4 +47,14 @@ const registerUser = catchAsyncError(async (req, res) => {
   });
 });
 
-export { registerUser };
+// GET CURRENT USER CREDENTIALS FROM SERVER => /api/me
+const currentUserProfile = catchAsyncError(async (req, res) => {
+  const user = await User.findById(req.user._id);
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+export { registerUser, currentUserProfile };

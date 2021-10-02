@@ -29,6 +29,7 @@
       }
     ],
     "react/jsx-props-no-spreading": "off",
+    "no-underscore-dangle": "off",
     "react/no-unescaped-entities": "off",
     "no-return-await": "off",
     "react/no-array-index-key": "off",
