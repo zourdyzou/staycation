@@ -6,6 +6,10 @@ import {
   LOAD_USER_FAIL,
   LOAD_USER_REQUEST,
   LOAD_USER_SUCCESS,
+  UPDATE_PROFILE_FAIL,
+  UPDATE_PROFILE_REQUEST,
+  UPDATE_PROFILE_RESET,
+  UPDATE_PROFILE_SUCCESS,
 } from "../constants/userConstant";
 
 // REGISTER NEW USER
@@ -45,6 +49,42 @@ export const authReducer = (state = { user: null }, action) => {
       return {
         loading: false,
         isAuthenticated: false,
+        error: action.payload,
+      };
+
+    case CLEAR_ERRORS:
+      return {
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
+
+// UPDATE USER CREDENTIAL
+export const userReducer = (state = { user: null }, action) => {
+  switch (action.type) {
+    case UPDATE_PROFILE_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case UPDATE_PROFILE_SUCCESS:
+      return {
+        loading: false,
+        isUpdated: action.payload,
+      };
+
+    case UPDATE_PROFILE_RESET:
+      return {
+        loading: false,
+        isUpdated: false,
+      };
+
+    case UPDATE_PROFILE_FAIL:
+      return {
+        loading: false,
         error: action.payload,
       };
 

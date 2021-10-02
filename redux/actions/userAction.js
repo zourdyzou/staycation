@@ -9,6 +9,9 @@ import {
   LOAD_USER_FAIL,
   LOAD_USER_REQUEST,
   LOAD_USER_SUCCESS,
+  UPDATE_PROFILE_FAIL,
+  UPDATE_PROFILE_REQUEST,
+  UPDATE_PROFILE_SUCCESS,
 } from "../constants/userConstant";
 
 // REGISTER USER =>  AUTHENTICATION
@@ -49,6 +52,31 @@ export const loadUser = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: LOAD_USER_FAIL,
+      payload: `${error.response.data.message}, please contact our customer services`,
+    });
+  }
+};
+
+// UPDATE PROFILE => CREDENTIALS
+export const updateProfile = (userData) => async (dispatch) => {
+  try {
+    dispatch({ type: UPDATE_PROFILE_REQUEST });
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const { data } = await axios.put("/api/me", userData, config);
+
+    dispatch({
+      type: UPDATE_PROFILE_SUCCESS,
+      payload: data.success,
+    });
+  } catch (error) {
+    dispatch({
+      type: UPDATE_PROFILE_FAIL,
       payload: `${error.response.data.message}, please contact our customer services`,
     });
   }
