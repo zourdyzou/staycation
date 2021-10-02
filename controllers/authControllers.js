@@ -57,4 +57,43 @@ const currentUserProfile = catchAsyncError(async (req, res) => {
   });
 });
 
-export { registerUser, currentUserProfile };
+// UPDATE CURRENT USER CREDENTIALS FROM SERVER => /api/me/update
+const updateUserProfile = catchAsyncError(async (req, res) => {
+  const user = await User.findById(req.user._id);
+
+  if (user) {
+    user.name = req.body.name;
+    user.email = req.body.email;
+
+    if (req.body.password) user.password = req.body.password;
+  }
+
+  // UPDATE => user avatar profile
+  if (req.body.avatar !== "") {
+    const imageID = user.avatar.public_id;
+
+    // DELETE USER PREVIOUS AVATAR IMAGE
+    await cloudinary.v2.uploader.destroy(imageID);
+
+    const results = await cloudinary.v2.uploader.upload(req.body.avatar, {
+      folder: "staycation/avatars",
+      width: "150",
+      crop: "scale",
+    });
+
+    user.avatar = {
+      public_id: results.public_id,
+      url: results.secure_url,
+    };
+  }
+
+  // SAVE => the new credentials
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+export { registerUser, currentUserProfile, updateUserProfile };
