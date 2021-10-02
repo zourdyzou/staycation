@@ -1,11 +1,13 @@
 import React from "react";
 import { getSession } from "next-auth/client";
+import { Profile } from "../../components/User/Profile";
+import { Layout } from "../../components/Layout/Layout";
 
 const UpdateProfilePage = () => {
   return (
-    <div>
-      <h1>User Profile</h1>
-    </div>
+    <Layout title="Update Profile | staycation.com">
+      <Profile />
+    </Layout>
   );
 };
 
