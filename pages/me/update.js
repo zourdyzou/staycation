@@ -1,24 +1,23 @@
+import React from "react";
 import { getSession } from "next-auth/client";
-import { Layout } from "../components/Layout/Layout";
-import { Login } from "../components/Auth/Login";
 
-export default function LoginPage() {
+const UpdateProfilePage = () => {
   return (
-    <Layout title="Login User | staycation.com">
-      <Login />
-    </Layout>
+    <div>
+      <h1>User Profile</h1>
+    </div>
   );
-}
+};
 
 // HANDLING => protected routes in the server side
 export const getServerSideProps = async (context) => {
   const session = await getSession({ req: context.req });
 
   // RUN => there is no user in session
-  if (session) {
+  if (!session) {
     return {
       redirect: {
-        destination: "/",
+        destination: "/login",
         permanent: false,
       },
     };
@@ -26,7 +25,9 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      doom: "protected routes",
+      session,
     },
   };
 };
+
+export default UpdateProfilePage;
