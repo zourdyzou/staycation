@@ -1,7 +1,8 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect } from "react";
 import Link from "next/link";
-
+import { signOut } from "next-auth/client";
 import { useDispatch, useSelector } from "react-redux";
 
 import { loadUser } from "../../redux/actions/userAction";
@@ -13,6 +14,10 @@ export const Header = () => {
   useEffect(() => {
     dispatch(loadUser());
   }, [dispatch]);
+
+  const logoutUser = () => {
+    signOut();
+  };
 
   return (
     <nav className="navbar row justify-content-center sticky-top">
@@ -60,7 +65,9 @@ export const Header = () => {
                   <a className="dropdown-item">My Profile</a>
                 </Link>
                 <Link href="/" passHref>
-                  <a className="dropdown-item">Logout</a>
+                  <a className="dropdown-item text-danger" onClick={logoutUser}>
+                    Logout
+                  </a>
                 </Link>
               </div>
             </div>
