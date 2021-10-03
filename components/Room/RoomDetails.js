@@ -14,9 +14,14 @@ import "slick-carousel/slick/slick-theme.css";
 import { RoomFeature } from "./RoomFeature";
 
 export const RoomDetails = () => {
-  const [checkInDate, setCheckInDate] = useState();
-  const [checkOutDate, setCheckOutDate] = useState();
-  const [daysOfStay, setDaysOfStay] = useState();
+  // const [checkInDate, setCheckInDate] = useState();
+  // const [checkOutDate, setCheckOutDate] = useState();
+
+  const [date, setDate] = useState({
+    checkInDate: null,
+    checkOutDate: null,
+  });
+  // const [daysOfStay, setDaysOfStay] = useState();
 
   const dispatch = useDispatch();
   const {
@@ -33,21 +38,24 @@ export const RoomDetails = () => {
   };
 
   const onChange = (dates) => {
-    // eslint-disable-next-line no-shadow
     const [checkInDate, checkOutDate] = dates;
 
-    setCheckInDate(checkInDate);
-    setCheckOutDate(checkOutDate);
+    console.log(checkInDate, checkOutDate);
 
-    if (checkInDate && checkOutDate) {
-      // CALCULATE DAYS OF STAY
+    setDate({
+      checkInDate,
+      checkOutDate,
+    });
 
-      const days = Math.floor(
-        (new Date(checkOutDate) - new Date(checkInDate)) / 86400000 + 1
-      );
+    // if (checkInDate && checkOutDate) {
+    //   // CALCULATE DAYS OF STAY
 
-      setDaysOfStay(days);
-    }
+    //   const days = Math.floor(
+    //     (new Date(checkOutDate) - new Date(checkInDate)) / 86400000 + 1
+    //   );
+
+    //   setDaysOfStay(days);
+    // }
   };
 
   useEffect(() => {
@@ -120,10 +128,10 @@ export const RoomDetails = () => {
 
               <DatePicker
                 className="w-100"
-                selected={checkInDate}
+                selected={date.checkInDate}
                 onChange={onChange}
-                startDate={checkInDate}
-                endDate={checkOutDate}
+                startDate={date.checkInDate}
+                endDate={date.checkOutDate}
                 minDate={new Date()}
                 selectsRange
                 inline
