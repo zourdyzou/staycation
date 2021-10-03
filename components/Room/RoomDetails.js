@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 // import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import Slider from "react-slick";
@@ -12,6 +14,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { RoomFeature } from "./RoomFeature";
 
 export const RoomDetails = () => {
+  const [checkInDate, setCheckInDate] = useState();
+  const [checkOutDate, setCheckOutDate] = useState();
+  const [daysOfStay, setDaysOfStay] = useState();
+
   const dispatch = useDispatch();
   const {
     room: { room: details },
@@ -24,6 +30,24 @@ export const RoomDetails = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+  };
+
+  const onChange = (dates) => {
+    // eslint-disable-next-line no-shadow
+    const [checkInDate, checkOutDate] = dates;
+
+    setCheckInDate(checkInDate);
+    setCheckOutDate(checkOutDate);
+
+    if (checkInDate && checkOutDate) {
+      // CALCULATE DAYS OF STAY
+
+      const days = Math.floor(
+        (new Date(checkOutDate) - new Date(checkInDate)) / 86400000 + 1
+      );
+
+      setDaysOfStay(days);
+    }
   };
 
   useEffect(() => {
@@ -90,6 +114,20 @@ export const RoomDetails = () => {
               <p className="price-per-night">
                 <b>${details.pricePerNight}</b> / night
               </p>
+
+              <hr />
+              <p className="mt-5 mb-3">Pick Check In & Check Out Date</p>
+
+              <DatePicker
+                className="w-100"
+                selected={checkInDate}
+                onChange={onChange}
+                startDate={checkInDate}
+                endDate={checkOutDate}
+                minDate={new Date()}
+                selectsRange
+                inline
+              />
 
               <button className="btn btn-block py-3 booking-btn">Pay</button>
             </div>
