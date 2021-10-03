@@ -1,5 +1,6 @@
 import cloudinary from "cloudinary";
 import absoluteUrl from "next-absolute-url";
+import crypto from "crypto";
 import User from "../models/user";
 
 import ErrorBoundary from "../utils/errorBoundary";
@@ -118,7 +119,7 @@ const sendEmailForgotPassword = catchAsyncError(async (req, res, next) => {
   // CREATE RESET PASSWORD URL
   const resetURL = `${origin}/password/reset/${resetToken}`;
 
-  const informationMessage = `Your password reset URL is as follow: \n\n ${resetURL} \n\n if you have not requested this email recovery token, please ignore it!`;
+  const informationMessage = `Hi ${user.name}! Your password reset URL is as follow: \n\n ${resetURL} \n\n if you have not requested this email recovery token, please ignore it!`;
 
   try {
     await sendEmailRecovery({
@@ -142,9 +143,54 @@ const sendEmailForgotPassword = catchAsyncError(async (req, res, next) => {
   }
 });
 
+// RESET PASSWORD OPERATIONS => /api/password/reset/:token
+const resetPassword = catchAsyncError(async (req, res, next) => {
+  // HASH THE URL TOKEN
+  const resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(req.query.token)
+    .digest("hex");
+
+  // FIND BY THE USER => $gt: Greater Than
+  const user = await User.findOne({
+    resetPasswordToken,
+    resetPasswordExpired: {
+      $gt: Date.now(),
+    },
+  });
+
+  if (!user) {
+    return next(
+      new ErrorBoundary(
+        "Password Token is invalid or have been expired!, please create a new one!",
+        400
+      )
+    );
+  }
+
+  if (req.body.password !== req.body.confirmPassword) {
+    return next(new ErrorBoundary("Password token is not match!", 400));
+  }
+
+  // SETUP THE NEW PASSWORD
+  user.password = req.body.password;
+
+  user.resetPasswordToken = undefined;
+  user.resetPasswordExpired = undefined;
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    status: 200,
+    message: "Password is updated successfully!",
+  });
+});
+
 export {
   registerUser,
   currentUserProfile,
   updateUserProfile,
   sendEmailForgotPassword,
+  resetPassword,
 };
