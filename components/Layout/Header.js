@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "../../redux/actions/userAction";
 
 export const Header = () => {
-  const { user, loading } = useSelector((state) => state.auth);
+  const { user, loading } = useSelector((state) => state.loadUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
