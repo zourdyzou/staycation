@@ -65,8 +65,8 @@ export const Login = () => {
               />
             </div>
 
-            <Link href="#" passHref className="float-right mb-4">
-              Forgot Password?
+            <Link href="/password/forgot" passHref>
+              <a className="float-right mb-4"> Forgot Password?</a>
             </Link>
 
             <button

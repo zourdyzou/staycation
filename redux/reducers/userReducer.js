@@ -10,6 +10,9 @@ import {
   UPDATE_PROFILE_REQUEST,
   UPDATE_PROFILE_RESET,
   UPDATE_PROFILE_SUCCESS,
+  FORGOT_PASSWORD_REQUEST,
+  FORGOT_PASSWORD_FAIL,
+  FORGOT_PASSWORD_SUCCESS,
 } from "../constants/userConstant";
 
 // REGISTER NEW USER
@@ -90,6 +93,37 @@ export const userReducer = (state = { user: null }, action) => {
 
     case CLEAR_ERRORS:
       return {
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
+
+// FORGOT PASSWORD WORKFLOW
+export const forgotPasswordReducer = (state = { user: null }, action) => {
+  switch (action.type) {
+    case FORGOT_PASSWORD_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case FORGOT_PASSWORD_SUCCESS:
+      return {
+        loading: false,
+        message: action.payload,
+      };
+
+    case FORGOT_PASSWORD_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+
+    case CLEAR_ERRORS:
+      return {
+        ...state,
         error: null,
       };
 

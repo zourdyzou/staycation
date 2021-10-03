@@ -13,6 +13,9 @@ import {
   UPDATE_PROFILE_FAIL,
   UPDATE_PROFILE_REQUEST,
   UPDATE_PROFILE_SUCCESS,
+  FORGOT_PASSWORD_REQUEST,
+  FORGOT_PASSWORD_FAIL,
+  FORGOT_PASSWORD_SUCCESS,
 } from "../constants/userConstant";
 
 // REGISTER USER =>  AUTHENTICATION
@@ -78,6 +81,31 @@ export const updateProfile = (userData) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: UPDATE_PROFILE_FAIL,
+      payload: `${error.response.data.message}, please contact our customer services`,
+    });
+  }
+};
+
+// FORGOT PASSWORD USERS => CREDENTIALS
+export const forgotPassword = (email) => async (dispatch) => {
+  try {
+    dispatch({ type: FORGOT_PASSWORD_REQUEST });
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const { data } = await axios.post("/api/password/forgot", email, config);
+
+    dispatch({
+      type: FORGOT_PASSWORD_SUCCESS,
+      payload: data.message,
+    });
+  } catch (error) {
+    dispatch({
+      type: FORGOT_PASSWORD_FAIL,
       payload: `${error.response.data.message}, please contact our customer services`,
     });
   }
