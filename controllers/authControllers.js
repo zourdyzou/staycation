@@ -134,7 +134,7 @@ const sendEmailForgotPassword = catchAsyncError(async (req, res, next) => {
     });
   } catch (error) {
     user.resetPasswordToken = undefined;
-    user.resetPasswordExpired = undefined;
+    user.resetPasswordExpire = undefined;
 
     // SAVE USER AGAIN => handling error
     await user.save({ validateBeforeSave: false });
@@ -154,10 +154,10 @@ const resetPassword = catchAsyncError(async (req, res, next) => {
   // FIND BY THE USER => $gt: Greater Than
   const user = await User.findOne({
     resetPasswordToken,
-    resetPasswordExpired: {
-      $gt: Date.now(),
-    },
+    resetPasswordExpire: { $gt: Date.now() },
   });
+
+  console.log(user);
 
   if (!user) {
     return next(
@@ -176,13 +176,12 @@ const resetPassword = catchAsyncError(async (req, res, next) => {
   user.password = req.body.password;
 
   user.resetPasswordToken = undefined;
-  user.resetPasswordExpired = undefined;
+  user.resetPasswordExpire = undefined;
 
   await user.save();
 
   res.status(200).json({
     success: true,
-    status: 200,
     message: "Password is updated successfully!",
   });
 });
