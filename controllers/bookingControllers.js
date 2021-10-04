@@ -43,4 +43,64 @@ const newBooking = catchAsyncError(async (req, res, next) => {
   });
 });
 
-export { newBooking };
+// CHECK ROOM BOOKING AVAILABILITY => /api/booking/check
+const checkBookingAvailability = catchAsyncError(async (req, res, next) => {
+  //! IF ANYTHING WRONG GO BACK HERE
+  let { roomId, checkInDate, checkOutDate } = req.query;
+
+  checkInDate = new Date(checkInDate);
+  checkOutDate = new Date(checkOutDate);
+
+  // FIND THE BOOKING ROOM
+
+  /**
+   *  $and: mongoDB operation
+   *     => we check the checkInDate inside the database
+   *        are not LESS THAN EQUAL to checkOutDate
+   *     => VICE VERSA
+   */
+
+  const booking = await Booking.find({
+    room: roomId,
+    $and: [
+      {
+        checkInDate: {
+          $lte: checkOutDate,
+        },
+      },
+      {
+        checkOutDate: {
+          $gte: checkInDate,
+        },
+      },
+    ],
+  });
+
+  // CHECK IF THERE IS ANY BOOKING AVAILABLE
+  let isAvailable;
+
+  if (booking && booking.length !== 0) {
+    isAvailable = true;
+  } else {
+    isAvailable = false;
+  }
+
+  //! BACK HERE AGAIN
+  if (!booking) {
+    return next(
+      new ErrorBoundary(
+        "There is booking available at the moment!, please contact our Web Support!",
+        500
+      )
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    status: 200,
+    message: isAvailable ? "Booking is available" : "Booking is not available",
+    isAvailable,
+  });
+});
+
+export { newBooking, checkBookingAvailability };
