@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 // import Image from "next/image";
 import React, { useEffect, useState } from "react";
-
+import { useRouter } from "next/router";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import Slider from "react-slick";
+import axios from "axios";
 import { clearError } from "../../redux/actions/roomAction";
 
 import "slick-carousel/slick/slick.css";
@@ -14,14 +15,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { RoomFeature } from "./RoomFeature";
 
 export const RoomDetails = () => {
-  // const [checkInDate, setCheckInDate] = useState();
-  // const [checkOutDate, setCheckOutDate] = useState();
-
   const [date, setDate] = useState({
     checkInDate: null,
     checkOutDate: null,
   });
-  // const [daysOfStay, setDaysOfStay] = useState();
+  const [daysOfStay, setDaysOfStay] = useState();
+  const router = useRouter();
 
   const dispatch = useDispatch();
   const {
@@ -47,15 +46,48 @@ export const RoomDetails = () => {
       checkOutDate,
     });
 
-    // if (checkInDate && checkOutDate) {
-    //   // CALCULATE DAYS OF STAY
+    if (checkInDate && checkOutDate) {
+      // CALCULATE DAYS OF STAY
+      // 86400000 => mili seconds in a day
 
-    //   const days = Math.floor(
-    //     (new Date(checkOutDate) - new Date(checkInDate)) / 86400000 + 1
-    //   );
+      const days = Math.floor(
+        (new Date(checkOutDate) - new Date(checkInDate)) / 86400000 + 1
+      );
 
-    //   setDaysOfStay(days);
-    // }
+      setDaysOfStay(days);
+    }
+  };
+
+  const newBookingHandler = async () => {
+    const bookingData = {
+      room: router.query.id,
+      checkInDate: date.checkInDate,
+      checkOutDate: date.checkOutDate,
+      daysOfStay,
+      amountPaid: 90,
+      paymentInfo: {
+        id: "STRIPE_PAYMENT_ID",
+        status: "STRIPE_PAYMENT_STATUS",
+      },
+    };
+
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const { data } = await axios.post("/api/booking", bookingData, config);
+
+      console.log({
+        DATA: data,
+      });
+    } catch (err) {
+      console.log({
+        RESPONSES: err.response,
+      });
+    }
   };
 
   useEffect(() => {
@@ -137,7 +169,12 @@ export const RoomDetails = () => {
                 inline
               />
 
-              <button className="btn btn-block py-3 booking-btn">Pay</button>
+              <button
+                className="btn btn-block py-3 booking-btn"
+                onClick={newBookingHandler}
+              >
+                Pay
+              </button>
             </div>
           </div>
         </div>
