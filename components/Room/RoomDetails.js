@@ -8,11 +8,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import Slider from "react-slick";
 import axios from "axios";
-import { clearError } from "../../redux/actions/roomAction";
+import { clearErrors, checkBooking } from "../../redux/actions/bookingAction";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { RoomFeature } from "./RoomFeature";
+
+// import { CHECK_BOOKING_RESET } from "../../redux/constants/bookingConstant";
 
 export const RoomDetails = () => {
   const [date, setDate] = useState({
@@ -27,6 +29,14 @@ export const RoomDetails = () => {
     room: { room: details },
     error,
   } = useSelector((state) => state.roomDetails);
+
+  const { available, loading: bookingLoading } = useSelector(
+    (state) => state.checkBooking
+  );
+
+  const { user } = useSelector((state) => state.loadUser);
+
+  const { id } = router.query;
 
   const settings = {
     dots: true,
@@ -55,6 +65,9 @@ export const RoomDetails = () => {
       );
 
       setDaysOfStay(days);
+      dispatch(
+        checkBooking(id, checkInDate.toISOString(), checkOutDate.toISOString())
+      );
     }
   };
 
@@ -102,7 +115,7 @@ export const RoomDetails = () => {
         progress: undefined,
       });
 
-      dispatch(clearError());
+      dispatch(clearErrors());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -128,9 +141,9 @@ export const RoomDetails = () => {
 
         <Slider {...settings}>
           {details.images.map((image) => {
-            const { _id: id } = image;
+            const { _id: keyID } = image;
             return (
-              <div key={id}>
+              <div key={keyID}>
                 <img
                   src={image.url}
                   className="d-block w-100 property-details-image m-auto"
@@ -169,12 +182,33 @@ export const RoomDetails = () => {
                 inline
               />
 
-              <button
-                className="btn btn-block py-3 booking-btn"
-                onClick={newBookingHandler}
-              >
-                Pay
-              </button>
+              {available === true && (
+                <div className="alert alert-success my-3 font-weight-bold">
+                  Room is available. Book now.
+                </div>
+              )}
+
+              {available === false && (
+                <div className="alert alert-danger my-3 font-weight-bold">
+                  Room is not available, Try different date
+                </div>
+              )}
+
+              {available && !user && (
+                <div className="alert alert-danger my-3 font-weight-bold">
+                  Login to book the reom
+                </div>
+              )}
+
+              {available && user && (
+                <button
+                  className="btn btn-block py-3 booking-btn"
+                  onClick={newBookingHandler}
+                  disabled={!!bookingLoading}
+                >
+                  Pay - ${daysOfStay * details.pricePerNight}
+                </button>
+              )}
             </div>
           </div>
         </div>
