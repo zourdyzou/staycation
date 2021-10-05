@@ -16,7 +16,41 @@ import {
   RESET_PASSWORD_REQUEST,
   RESET_PASSWORD_FAIL,
   RESET_PASSWORD_SUCCESS,
+  LOAD_TRAVELLER_REQUEST,
+  LOAD_TRAVELLER_SUCCESS,
+  LOAD_TRAVELLER_FAIL,
 } from "../constants/userConstant";
+
+// GET ALL THE TRAVELLER => USER THAT HAS BEEN REGISTERED
+export const travellerReducer = (state = { user: null }, action) => {
+  switch (action.type) {
+    case LOAD_TRAVELLER_REQUEST:
+      return {
+        loading: true,
+        message: "LOAD TRAVELLER",
+      };
+
+    case LOAD_TRAVELLER_SUCCESS:
+      return {
+        loading: false,
+        user: action.payload,
+      };
+
+    case LOAD_TRAVELLER_FAIL:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+
+    case CLEAR_ERRORS:
+      return {
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
 
 // REGISTER NEW USER
 export const authReducer = (state = { user: null }, action) => {

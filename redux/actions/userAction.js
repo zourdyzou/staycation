@@ -19,7 +19,29 @@ import {
   RESET_PASSWORD_REQUEST,
   RESET_PASSWORD_FAIL,
   RESET_PASSWORD_SUCCESS,
+  LOAD_TRAVELLER_REQUEST,
+  LOAD_TRAVELLER_SUCCESS,
+  LOAD_TRAVELLER_FAIL,
 } from "../constants/userConstant";
+
+// GET ALL THE TRAVELLER
+export const loadTraveller = () => async (dispatch) => {
+  try {
+    dispatch({ type: LOAD_TRAVELLER_REQUEST });
+
+    const { data } = await axios.get("/api/me/traveller");
+
+    dispatch({
+      type: LOAD_TRAVELLER_SUCCESS,
+      payload: data.user,
+    });
+  } catch (error) {
+    dispatch({
+      type: LOAD_TRAVELLER_FAIL,
+      payload: `${error.response.data.message}, please contact our customer services`,
+    });
+  }
+};
 
 // REGISTER USER =>  AUTHENTICATION
 export const registerUser = (userData) => async (dispatch) => {
@@ -46,6 +68,7 @@ export const registerUser = (userData) => async (dispatch) => {
   }
 };
 
+// LOAD USER
 export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_REQUEST });

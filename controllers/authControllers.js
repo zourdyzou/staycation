@@ -15,6 +15,25 @@ cloudinary.v2.config({
   api_secret: "Cav3f_4jx2pTQugjyAXJyd88j74",
 });
 
+// GET ALL USER
+const getAllUser = catchAsyncError(async (req, res, next) => {
+  const user = await User.find();
+
+  if (!user) {
+    return next(
+      new ErrorBoundary(
+        "Sorry cannot get the user at the moment!, please contact our technical support for further help!"
+      )
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    message: "Getting all user from the database for traveller feature",
+    user,
+  });
+});
+
 // REGISTER USER => /api/rooms/register
 const registerUser = catchAsyncError(async (req, res) => {
   // CLOUDINARY
@@ -192,4 +211,5 @@ export {
   updateUserProfile,
   sendEmailForgotPassword,
   resetPassword,
+  getAllUser,
 };
