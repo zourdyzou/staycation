@@ -8,23 +8,35 @@ import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import Slider from "react-slick";
 import axios from "axios";
-import { clearErrors, checkBooking } from "../../redux/actions/bookingAction";
+import {
+  clearErrors,
+  checkBooking,
+  getBookedDates,
+} from "../../redux/actions/bookingAction";
+// import { CHECK_BOOKING_RESET } from "../../redux/constants/bookingConstant";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { RoomFeature } from "./RoomFeature";
-
-// import { CHECK_BOOKING_RESET } from "../../redux/constants/bookingConstant";
 
 export const RoomDetails = () => {
   const [date, setDate] = useState({
     checkInDate: null,
     checkOutDate: null,
   });
-  const [daysOfStay, setDaysOfStay] = useState();
   const router = useRouter();
-
+  const { id } = router.query;
   const dispatch = useDispatch();
+  const [daysOfStay, setDaysOfStay] = useState();
+  const { user } = useSelector((state) => state.loadUser);
+  const { dates } = useSelector((state) => state.bookedDates);
+
+  const excludedDates = [];
+
+  dates.forEach((dateBook) => {
+    excludedDates.push(new Date(dateBook));
+  });
+
   const {
     room: { room: details },
     error,
@@ -33,10 +45,6 @@ export const RoomDetails = () => {
   const { available, loading: bookingLoading } = useSelector(
     (state) => state.checkBooking
   );
-
-  const { user } = useSelector((state) => state.loadUser);
-
-  const { id } = router.query;
 
   const settings = {
     dots: true,
@@ -104,6 +112,8 @@ export const RoomDetails = () => {
   };
 
   useEffect(() => {
+    dispatch(getBookedDates(id));
+
     if (error) {
       toast.error(`🦄 ${error}`, {
         position: "top-right",
@@ -118,7 +128,7 @@ export const RoomDetails = () => {
       dispatch(clearErrors());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch, id]);
 
   return (
     <>
@@ -178,6 +188,7 @@ export const RoomDetails = () => {
                 startDate={date.checkInDate}
                 endDate={date.checkOutDate}
                 minDate={new Date()}
+                excludeDates={excludedDates}
                 selectsRange
                 inline
               />

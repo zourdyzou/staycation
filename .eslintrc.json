@@ -43,6 +43,7 @@
     "no-param-reassign": "off",
     "prefer-const": "off",
     "react/button-has-type": "off",
-    "import/no-anonymous-default-export": "off"
+    "import/no-anonymous-default-export": "off",
+    "no-shadow": "off"
   }
 }
