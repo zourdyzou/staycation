@@ -83,7 +83,7 @@ const checkBookingAvailability = catchAsyncError(async (req, res, next) => {
   // CHECK IF THERE IS ANY BOOKING AVAILABLE
   let isAvailable;
 
-  if (booking && booking.length !== 0) {
+  if (booking && booking.length === 0) {
     isAvailable = true;
   } else {
     isAvailable = false;
@@ -114,13 +114,23 @@ const checkBookedDate = catchAsyncError(async (req, res, next) => {
 
   const bookings = await Booking.find({ room: roomId });
 
+  // 60 minutes
+  const timeDifferentiation = moment().utcOffset() / 60;
+
   let bookedDates = [];
 
   bookings.forEach((booking) => {
-    const range = moment.range(
-      moment(booking.checkInDate),
-      moment(booking.checkOutDate)
+    // DIFFERENTIATE IN HOURS BETWEEN CHECKINDATE AND CHECKOUTDATE
+    const checkInDate = moment(booking.checkInDate).add(
+      timeDifferentiation,
+      "hours"
     );
+    const checkOutDate = moment(booking.checkOutDate).add(
+      timeDifferentiation,
+      "hours"
+    );
+
+    const range = moment.range(moment(checkInDate), moment(checkOutDate));
 
     const dates = Array.from(range.by("day"));
 
