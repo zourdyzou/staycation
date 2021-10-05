@@ -1,7 +1,11 @@
+import Moment from "moment";
+import { extendMoment } from "moment-range";
 import Booking from "../models/booking";
 
 import ErrorBoundary from "../utils/errorBoundary";
 import catchAsyncError from "../middlewares/catchAsyncError";
+
+const moment = extendMoment(Moment);
 
 // CREATE NEW BOOKING => /api/booking
 const newBooking = catchAsyncError(async (req, res, next) => {
@@ -103,4 +107,40 @@ const checkBookingAvailability = catchAsyncError(async (req, res, next) => {
   });
 });
 
-export { newBooking, checkBookingAvailability };
+// CHECK BOOKING OF A ROOM  => /api/booking/check-booked-dates
+const checkBookedDate = catchAsyncError(async (req, res, next) => {
+  // FIND THE BOOKING ROOM
+  const { roomId } = req.query;
+
+  const bookings = await Booking.find({ room: roomId });
+
+  let bookedDates = [];
+
+  bookings.forEach((booking) => {
+    const range = moment.range(
+      moment(booking.checkInDate),
+      moment(booking.checkOutDate)
+    );
+
+    const dates = Array.from(range.by("day"));
+
+    bookedDates = bookedDates.concat(dates);
+  });
+
+  if (!bookings) {
+    return next(
+      new ErrorBoundary(
+        "Sorry cannot get the booking data, please contact our technical support for further details"
+      )
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    status: 200,
+    message: "List of the Booked Dates",
+    bookedDates,
+  });
+});
+
+export { newBooking, checkBookingAvailability, checkBookedDate };

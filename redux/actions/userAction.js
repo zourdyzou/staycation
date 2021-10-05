@@ -3,10 +3,10 @@ import axios from "axios";
 // import absoluteUrl from "next-absolute-url";
 
 import {
-  USER_REGISTER_SUCCESS,
-  USER_REGISTER_REQUEST,
-  USER_REGISTER_FAIL,
   CLEAR_ERRORS,
+  USER_REGISTER_REQUEST,
+  USER_REGISTER_SUCCESS,
+  USER_REGISTER_FAIL,
   LOAD_USER_FAIL,
   LOAD_USER_REQUEST,
   LOAD_USER_SUCCESS,
