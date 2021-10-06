@@ -10,7 +10,7 @@ import { Footer } from "./Footer";
 export const Layout = ({
   children,
   title = "Book Best Hotels for your holiday!",
-  description = "Welcome to our site!, where you can find the beauty of our world!",
+  description = "Welcome to staycation!, where you can find the beauty of our world!",
 }) => {
   return (
     <div>

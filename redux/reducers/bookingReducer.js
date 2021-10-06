@@ -8,6 +8,8 @@ import {
   CLEAR_ERRORS,
   MY_BOOKINGS_SUCCESS,
   MY_BOOKINGS_FAIL,
+  BOOKING_DETAILS_FAIL,
+  BOOKING_DETAILS_SUCCESS,
 } from "../constants/bookingConstant";
 
 //  CHECK BOOKING
@@ -76,6 +78,28 @@ export const myBookingsReducer = (state = { bookings: [] }, action) => {
         bookings: action.payload,
       };
     case MY_BOOKINGS_FAIL:
+      return {
+        error: action.payload,
+      };
+
+    case CLEAR_ERRORS:
+      return {
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
+
+// HANDLE BOOKING DETAILS FROM THE CURRENT USER LOGGED
+export const bookingDetailsReducer = (state = { bookings: {} }, action) => {
+  switch (action.type) {
+    case BOOKING_DETAILS_SUCCESS:
+      return {
+        bookings: action.payload,
+      };
+    case BOOKING_DETAILS_FAIL:
       return {
         error: action.payload,
       };

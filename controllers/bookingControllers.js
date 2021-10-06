@@ -174,9 +174,39 @@ const getCurrentBookingFromUser = catchAsyncError(async (req, res, next) => {
   });
 });
 
+// GET BOOKING DETAILS FROM CURRENT USER LOGGED  => /api/booking/:id
+const getBookingDetailsFromUser = catchAsyncError(async (req, res, next) => {
+  // FIND BOOKING BY USER
+  const bookings = await Booking.findById(req.query.id)
+    .populate({
+      path: "room",
+      select: "name pricePerNight images",
+    })
+    .populate({
+      path: "user",
+      select: "name email",
+    });
+
+  if (!bookings) {
+    return next(
+      new ErrorBoundary(
+        "Sorry cannot get the booking data, please contact our technical support for further details"
+      )
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    status: 200,
+    message: "List of the Booked Dates From Current User",
+    bookings,
+  });
+});
+
 export {
   newBooking,
   checkBookingAvailability,
   checkBookedDate,
   getCurrentBookingFromUser,
+  getBookingDetailsFromUser,
 };
