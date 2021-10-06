@@ -6,6 +6,8 @@ import {
   BOOKED_DATES_SUCCESS,
   BOOKED_DATES_FAIL,
   CLEAR_ERRORS,
+  MY_BOOKINGS_SUCCESS,
+  MY_BOOKINGS_FAIL,
 } from "../constants/bookingConstant";
 
 //  CHECK BOOKING
@@ -52,6 +54,28 @@ export const bookedDatesReducer = (state = { dates: [] }, action) => {
         dates: action.payload,
       };
     case BOOKED_DATES_FAIL:
+      return {
+        error: action.payload,
+      };
+
+    case CLEAR_ERRORS:
+      return {
+        error: null,
+      };
+
+    default:
+      return state;
+  }
+};
+
+// HANDLE ALL BOOKED DATES FROM THE CURRENT USER LOGGED
+export const myBookingsReducer = (state = { bookings: [] }, action) => {
+  switch (action.type) {
+    case MY_BOOKINGS_SUCCESS:
+      return {
+        bookings: action.payload,
+      };
+    case MY_BOOKINGS_FAIL:
       return {
         error: action.payload,
       };

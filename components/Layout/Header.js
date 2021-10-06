@@ -58,10 +58,10 @@ export const Header = () => {
                 className="dropdown-menu"
                 aria-labelledby="dropDownMenuButton"
               >
-                <Link href="/bookings/me" passHref>
+                <Link href="/booking/me" passHref>
                   <a className="dropdown-item">My Bookings</a>
                 </Link>
-                <Link href="/bookings/me" passHref>
+                <Link href="/booking/me" passHref>
                   <a className="dropdown-item">My Profile</a>
                 </Link>
                 <Link href="/" passHref>

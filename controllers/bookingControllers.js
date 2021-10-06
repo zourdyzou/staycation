@@ -153,4 +153,30 @@ const checkBookedDate = catchAsyncError(async (req, res, next) => {
   });
 });
 
-export { newBooking, checkBookingAvailability, checkBookedDate };
+// GET ALL BOOKING FROM CURRENT USER LOGGED  => /api/booking/check-booked-dates
+const getCurrentBookingFromUser = catchAsyncError(async (req, res, next) => {
+  // FIND BOOKING BY USER
+  const bookings = await Booking.find({ user: req.user._id });
+
+  if (!bookings) {
+    return next(
+      new ErrorBoundary(
+        "Sorry cannot get the booking data, please contact our technical support for further details"
+      )
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    status: 200,
+    message: "List of the Booked Dates From Current User",
+    bookings,
+  });
+});
+
+export {
+  newBooking,
+  checkBookingAvailability,
+  checkBookedDate,
+  getCurrentBookingFromUser,
+};
