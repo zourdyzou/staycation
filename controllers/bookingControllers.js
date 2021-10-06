@@ -156,7 +156,15 @@ const checkBookedDate = catchAsyncError(async (req, res, next) => {
 // GET ALL BOOKING FROM CURRENT USER LOGGED  => /api/booking/check-booked-dates
 const getCurrentBookingFromUser = catchAsyncError(async (req, res, next) => {
   // FIND BOOKING BY USER
-  const bookings = await Booking.find({ user: req.user._id });
+  const bookings = await Booking.find({ user: req.user._id })
+    .populate({
+      path: "room",
+      select: "name pricePerNight images",
+    })
+    .populate({
+      path: "user",
+      select: "name email",
+    });
 
   if (!bookings) {
     return next(

@@ -50,7 +50,7 @@ export const MyBooking = () => {
         )}`,
       },
       invoiceNumber: `${booking._id}`,
-      invoiceDate: `${new Date(Date.now()).toLocaleString("en-US")}`,
+      invoiceDate: `${new Date(Date.now()).toLocaleString("fr-FR")}`,
       products: [
         {
           quantity: `${booking.daysOfStay}`,
@@ -101,6 +101,7 @@ export const MyBooking = () => {
 
     bookings &&
       bookings.forEach((booking) => {
+        console.log(booking);
         data.rows.push({
           id: booking._id,
           checkIn: new Date(booking.checkInDate).toLocaleString("en-US"),
