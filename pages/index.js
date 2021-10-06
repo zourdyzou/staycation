@@ -1,4 +1,4 @@
-import { Home } from "../containers/Home";
+// import { Home } from "../containers/Home";
 import { Layout } from "../components/Layout/Layout";
 
 import { getRooms } from "../redux/actions/roomAction";
@@ -7,7 +7,8 @@ import { wrapper } from "../redux/store";
 export default function Index() {
   return (
     <Layout>
-      <Home />
+      {/* <Home /> */}
+      <h1>Hello World</h1>
     </Layout>
   );
 }

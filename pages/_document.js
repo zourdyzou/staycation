@@ -11,7 +11,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
+          {/* <link
             rel="stylesheet"
             type="text/css"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -20,13 +20,13 @@ class MyDocument extends Document {
             rel="stylesheet"
             type="text/css"
             href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-          />
+          /> */}
         </Head>
         <body>
           <Main />
           <NextScript />
 
-          <script
+          {/* <script
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossOrigin="anonymous"
@@ -40,7 +40,7 @@ class MyDocument extends Document {
             src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
             integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
             crossOrigin="anonymous"
-          />
+          /> */}
         </body>
       </Html>
     );
