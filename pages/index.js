@@ -10,7 +10,6 @@ export default function Index() {
   return (
     <Layout>
       <Hero />
-
       <main className="max-w-6xl mx-auto pb-32">
         <Explore />
       </main>

@@ -9,7 +9,7 @@ import { Footer } from "./Footer";
 
 export const Layout = ({
   children,
-  title = "Book Best Hotels for your holiday!",
+  title = "Book the best hotels for your holiday! | Staycation.com",
   description = "Welcome to staycation!, where you can find the beauty of our world!",
 }) => {
   return (
