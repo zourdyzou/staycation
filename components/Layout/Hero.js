@@ -4,7 +4,7 @@ import { utilsData } from "../../public/mockData";
 
 export const Hero = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-10 items-center space-y-44 justify-center md:space-x-3 max-w-6xl mx-auto h-[700px] my-36 md:my-0 px-5 md:space-y-16 md:transform md:-translate-y-10">
+    <div className="flex flex-col md:flex-row gap-10 items-center space-y-44 justify-center md:space-x-3 max-w-6xl mx-auto h-[700px] my-28 md:my-12 px-5 md:space-y-16 md:transform md:-translate-y-28">
       <div className="flex flex-col space-y-5 h-96 flex-1">
         <h1 className="text-4xl leading-snug md:text-[38px] mr-[60px] font-bold text-indigo-900 md:leading-snug pt-10">
           Forget Busy Work, Start Next Vacation
@@ -14,7 +14,7 @@ export const Hero = () => {
           make another memorable moments.
         </p>
 
-        <button className="flex p-4 w-72 text-white rounded-md items-center justify-center bg-indigo-600">
+        <button className="flex p-4 w-72 text-white rounded-md items-center justify-center bg-indigo-600 hover:bg-indigo-800 shadow-sm transform active:scale-105 transition ease-in duration-100">
           Show Me Now
         </button>
 
@@ -45,7 +45,7 @@ export const Hero = () => {
           layout="fill"
           objectFit="cover"
           alt="hero asset of staycation"
-          className="rounded-lg rounded-tl-[40px] md:rounded-tl-[70px]"
+          className="rounded-xl rounded-tl-[40px] md:rounded-tl-[70px]"
         />
       </div>
     </div>
