@@ -22,61 +22,63 @@ export const Header = () => {
   // };
 
   return (
-    <nav className="flex items-center justify-between max-w-6xl mx-auto md:px-4 p-5">
-      <Link href="/" passHref>
-        <div className="relative h-7 w-36 cursor-pointer">
-          <Image
-            src="/images/logo/Staycation.png"
-            layout="fill"
-            alt="Logo Staycation.com best places for spending your travel time!"
-          />
-        </div>
-      </Link>
-      <div className="hidden md:inline-flex items-center  space-x-3 sm:space-x-6 ">
+    <div className="bg-white w-full z-50 fixed top-0 shadow-md">
+      <nav className="flex items-center justify-between z-50 w-full bg-white max-w-6xl mx-auto md:px-4 p-5 shadow-sm">
         <Link href="/" passHref>
-          <a
-            className={`text-lg ${
-              router.pathname === "/" ? "text-blue-500" : "text-black"
-            }`}
-          >
-            Home
-          </a>
-        </Link>
-        <Link href="/properties" passHref>
-          <a className={`text-lg ${user && "px-2"}`}>Properties</a>
-        </Link>
-
-        {user ? (
-          <div className="flex items-center space-x-3 cursor-pointer">
-            <div className="relative h-8 w-8">
-              <Image
-                src={user.avatar.url}
-                alt="avatar profile for user | traveller"
-                layout="fill"
-                className="rounded-full"
-              />
-            </div>
-
-            <h4>{user?.name}</h4>
+          <div className="relative h-7 w-36 cursor-pointer">
+            <Image
+              src="/images/logo/Staycation.png"
+              layout="fill"
+              alt="Logo Staycation.com best places for spending your travel time!"
+            />
           </div>
-        ) : (
-          !loading && (
-            <>
-              <Link href="/login" passHref>
-                <a className="text-lg text-white bg-blue-500 px-5 py-[5px] rounded-md hover:bg-indigo-600 ">
-                  Login
-                </a>
-              </Link>
-              <Link href="/register" passHref>
-                <a className="text-lg border border-blue-600 rounded-md px-5 py-[5px] hover:bg-indigo-600 hover:text-white">
-                  Register
-                </a>
-              </Link>
-            </>
-          )
-        )}
-      </div>
-    </nav>
+        </Link>
+        <div className="hidden md:inline-flex items-center  space-x-3 sm:space-x-6 ">
+          <Link href="/" passHref>
+            <a
+              className={`text-lg ${
+                router.pathname === "/" ? "text-blue-500" : "text-black"
+              }`}
+            >
+              Home
+            </a>
+          </Link>
+          <Link href="/properties" passHref>
+            <a className={`text-lg ${user && "px-2"}`}>Properties</a>
+          </Link>
+
+          {user ? (
+            <div className="flex items-center space-x-3 cursor-pointer">
+              <div className="relative h-8 w-8">
+                <Image
+                  src={user.avatar.url}
+                  alt="avatar profile for user | traveller"
+                  layout="fill"
+                  className="rounded-full"
+                />
+              </div>
+
+              <h4>{user?.name}</h4>
+            </div>
+          ) : (
+            !loading && (
+              <>
+                <Link href="/login" passHref>
+                  <a className="text-lg text-white bg-blue-500 px-5 py-[5px] rounded-md hover:bg-indigo-600 ">
+                    Login
+                  </a>
+                </Link>
+                <Link href="/register" passHref>
+                  <a className="text-lg border border-blue-600 rounded-md px-5 py-[5px] hover:bg-indigo-600 hover:text-white">
+                    Register
+                  </a>
+                </Link>
+              </>
+            )
+          )}
+        </div>
+      </nav>
+    </div>
   );
 };
 
