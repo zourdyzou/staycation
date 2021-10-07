@@ -23,14 +23,16 @@ export const Header = () => {
 
   return (
     <nav className="flex items-center justify-between max-w-6xl mx-auto md:px-4 p-5">
-      <div className="relative h-7 w-36">
-        <Image
-          src="/images/logo/Staycation.png"
-          layout="fill"
-          alt="Logo Staycation.com best places for spending your travel time!"
-        />
-      </div>
-      <div className="flex items-center  space-x-3 sm:space-x-6 ">
+      <Link href="/" passHref>
+        <div className="relative h-7 w-36 cursor-pointer">
+          <Image
+            src="/images/logo/Staycation.png"
+            layout="fill"
+            alt="Logo Staycation.com best places for spending your travel time!"
+          />
+        </div>
+      </Link>
+      <div className="hidden md:inline-flex items-center  space-x-3 sm:space-x-6 ">
         <Link href="/" passHref>
           <a
             className={`text-lg ${

@@ -33,6 +33,9 @@ export const Footer = () => {
               <p className="text-gray-400 hover:underline cursor-pointer">
                 Use Payments
               </p>
+              <p className="text-gray-400 hover:underline cursor-pointer">
+                Become a partner
+              </p>
             </div>
           </div>
 
