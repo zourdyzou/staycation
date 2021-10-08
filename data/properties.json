@@ -1,0 +1,332 @@
+[
+  {
+    "name": "Victoria Le Hotel",
+    "pricePerNight": 35,
+    "description": "Minimal techno is a minimalist subgenre of techno music. It is characterized by a stripped-down aesthetic that exploits the use of repetition and understated development. Minimal techno is thought to have been originally developed in the early 1990s by Detroit-based producers Robert Hood and Daniel Bell.",
+    "address": "4724  Mudlick Road, Yakima, WA, 98902",
+    "guestCapacity": 2,
+    "numOfBeds": "1 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/images/7_hshhzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595487/images/img-mostpicked-2_rnncfv.jpg"
+      },
+      {
+        "public_id": "staycation/images/7_h12hzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595481/images/img-mostpicked-3_sghtte.png"
+      },
+      {
+        "public_id": "staycation/images/7_sjfhhzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595471/images/image-category-8_gi5dbl.jpg"
+      }
+    ],
+    "category": "Single"
+  },
+  {
+    "name": "Vienizcke Hotel",
+    "pricePerNight": 75,
+    "description": "Minimal techno is a minimalist subgenre of techno music. It is characterized by a stripped-down aesthetic that exploits the use of repetition and understated development. Minimal techno is thought to have been originally developed in the early 1990s by Detroit-based producers Robert Hood and Daniel Bell.",
+    "address": "Krakow, Poland",
+    "guestCapacity": 4,
+    "numOfBeds": "3 beds",
+    "internet": "8 mbp/s",
+    "breakfast": true,
+    "airConditioning": "4 unit",
+    "livingRoom": "3 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "4 Bathroom",
+    "refrigerator": "2 Refrigerator",
+    "television": "3 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_h13bdqihzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595461/images/image-category-2_tfwzpx.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hqeqbhzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595463/images/image-category-3_waiv9a.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hxq1bzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595465/images/image-category-7_tnffzi.jpg"
+      }
+    ],
+    "category": "King"
+  },
+  {
+    "name": "Kolivera Resort",
+    "pricePerNight": 65,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Aubagne, France",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_hqen2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595465/images/image-category-4_rwcm2g.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_qnejzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595465/images/image-category-1_pd1ieu.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_heqnnwzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595461/images/image-category-10_s3gpqs.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Le Seyoux Hotel",
+    "pricePerNight": 95,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Somme, France",
+    "guestCapacity": 4,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q1314zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595479/images/img-mostpicked-4_l7qntm.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hw1qr1wzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595469/images/image-category-6_mvv7fm.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h242n2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595463/images/image-category-3_waiv9a.jpg"
+      }
+    ],
+    "category": "King"
+  },
+  {
+    "name": "Wiedzcor Hotel",
+    "pricePerNight": 45,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Poznan, Poland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q2e24zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685052/rooms/mohd-elle-oji_NGmBI5o-unsplash_pw4f0m.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_he2144wzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685019/rooms/dayana-brooke-dZbBlss3FyE-unsplash_sxtdep.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hq242nzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685040/rooms/sigmund-sRoX74sasiI-unsplash_ngoj2c.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Olive Beau Resort",
+    "pricePerNight": 75,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Marakesh, Morocco",
+    "guestCapacity": 2,
+    "numOfBeds": "3 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "1 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q12313q",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685026/rooms/obi-onyeador-gUW8waI74AQ-unsplash_vdu9e3.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_he131nn42zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685025/rooms/zheka-boychenko-SIg-ZsJPf5Q-unsplash_ffncmk.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h132n2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684940/rooms/franck-morisset-UFhM8kMuQbo-unsplash_clbdjg.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Coirn Harnes Hotel",
+    "pricePerNight": 63,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Coirn Loch, Scotland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q12jzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684996/rooms/q-u-i-giL2fHNr3Lc-unsplash_n9gok4.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h134sq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684935/rooms/alexander-huang-WHNPtAilodU-unsplash_sgr6cs.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h13jjw2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684930/rooms/sara-dubler-Koei_7yYtIo-unsplash_h1ux39.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Courdrup Hotel",
+    "pricePerNight": 63,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Normandy, France",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q131313zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684914/rooms/arcorias-g7z__ymzHEg-unsplash_c3wuts.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1124991sq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685019/rooms/dayana-brooke-dZbBlss3FyE-unsplash_sxtdep.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1r25w2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684931/rooms/mike-swigunski-k9Zeq6EH_bk-unsplash_iqe6zd.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Le Zoustche Hotel",
+    "pricePerNight": 83,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Zurich, Switzerland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "3 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q1qejnzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685064/rooms/the-anam-_twiIcIsp2s-unsplash_wwusxu.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h30024jsq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685026/rooms/obi-onyeador-gUW8waI74AQ-unsplash_vdu9e3.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1341492zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685040/rooms/sigmund-sRoX74sasiI-unsplash_ngoj2c.jpg"
+      }
+    ],
+    "category": "Kings"
+  },
+  {
+    "name": "Greene Hotel",
+    "pricePerNight": 75,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Amsterdam, Holland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q113131jdq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684915/rooms/artie-kostenko-a6EzvPjXfBY-unsplash_bq2kc4.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h11414sq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685025/rooms/zheka-boychenko-SIg-ZsJPf5Q-unsplash_ffncmk.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1fk2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684940/rooms/franck-morisset-UFhM8kMuQbo-unsplash_clbdjg.jpg"
+      }
+    ],
+    "category": "Twins"
+  }
+]
