@@ -94,7 +94,7 @@ const propertiesSchema = new mongoose.Schema({
     required: [true, "Please enter room category"],
     enum: {
       values: ["King", "Single", "Twins"],
-      message: "Please select correct category for room",
+      message: "Please select correct category for property",
     },
   },
   reviews: [

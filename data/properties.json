@@ -18,16 +18,16 @@
     "television": "2 Television",
     "images": [
       {
-        "public_id": "staycation/images/7_hshhzq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595487/images/img-mostpicked-2_rnncfv.jpg"
+        "public_id": "staycation/rooms/71312jzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684996/rooms/q-u-i-giL2fHNr3Lc-unsplash_n9gok4.jpg"
       },
       {
-        "public_id": "staycation/images/7_h12hzq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595481/images/img-mostpicked-3_sghtte.png"
+        "public_id": "staycation/rooms/141434sq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684935/rooms/alexander-huang-WHNPtAilodU-unsplash_sgr6cs.jpg"
       },
       {
-        "public_id": "staycation/images/7_sjfhhzq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595471/images/image-category-8_gi5dbl.jpg"
+        "public_id": "staycation/rooms/1414jjw2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684930/rooms/sara-dubler-Koei_7yYtIo-unsplash_h1ux39.jpg"
       }
     ],
     "category": "Single"
@@ -52,15 +52,15 @@
     "images": [
       {
         "public_id": "staycation/rooms/7_h13bdqihzq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595461/images/image-category-2_tfwzpx.jpg"
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684996/rooms/q-u-i-giL2fHNr3Lc-unsplash_n9gok4.jpg"
       },
       {
         "public_id": "staycation/rooms/7_hqeqbhzq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595463/images/image-category-3_waiv9a.jpg"
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684994/rooms/claudia-altamimi-dEGNA6jIcBM-unsplash_q3kym8.jpg"
       },
       {
         "public_id": "staycation/rooms/7_hxq1bzq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595465/images/image-category-7_tnffzi.jpg"
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684980/rooms/christian-hess-araya-HtXK-ykvuxc-unsplash_rpicog.jpg"
       }
     ],
     "category": "King"
@@ -85,15 +85,15 @@
     "images": [
       {
         "public_id": "staycation/rooms/7_hqen2zq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595465/images/image-category-4_rwcm2g.jpg"
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684958/rooms/alexander-kaunas-TAgGZWz6Qg8-unsplash_dlamav.jpg"
       },
       {
         "public_id": "staycation/rooms/7_qnejzq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595465/images/image-category-1_pd1ieu.jpg"
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684935/rooms/alexander-huang-WHNPtAilodU-unsplash_sgr6cs.jpg"
       },
       {
         "public_id": "staycation/rooms/7_heqnnwzq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595461/images/image-category-10_s3gpqs.jpg"
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684930/rooms/sara-dubler-Koei_7yYtIo-unsplash_h1ux39.jpg"
       }
     ],
     "category": "Twins"
@@ -118,15 +118,15 @@
     "images": [
       {
         "public_id": "staycation/rooms/7_q1314zq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595479/images/img-mostpicked-4_l7qntm.jpg"
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685052/rooms/mohd-elle-oji_NGmBI5o-unsplash_pw4f0m.jpg"
       },
       {
         "public_id": "staycation/rooms/7_hw1qr1wzq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595469/images/image-category-6_mvv7fm.jpg"
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685059/rooms/paul-szewczyk-nI4aC1kaTRc-unsplash_nuuyzq.jpg"
       },
       {
         "public_id": "staycation/rooms/7_h242n2zq",
-        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633595463/images/image-category-3_waiv9a.jpg"
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685064/rooms/the-anam-_twiIcIsp2s-unsplash_wwusxu.jpg"
       }
     ],
     "category": "King"
@@ -294,7 +294,7 @@
         "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685040/rooms/sigmund-sRoX74sasiI-unsplash_ngoj2c.jpg"
       }
     ],
-    "category": "Kings"
+    "category": "King"
   },
   {
     "name": "Greene Hotel",
