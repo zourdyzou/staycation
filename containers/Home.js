@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 
-import { useRouter } from "next/router";
-
-import Pagination from "react-js-pagination";
+// import { useRouter } from "next/router";
 
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -12,23 +10,14 @@ import { RoomItem } from "../components/Room/RoomItem";
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const router = useRouter();
+  // const router = useRouter();
   const {
     rooms: allRooms,
-    resPerPage,
-    roomsCount,
-    filteredRoomsCount,
+    // resPerPage,
+    // roomsCount,
+    // filteredRoomsCount,
     error,
   } = useSelector((state) => state.allRooms);
-
-  // const [currentPage,setCurrentPage] = useState('')
-
-  let { location, page = 1 } = router.query;
-  page = Number(page);
-
-  const handlePagination = (pageNum) => {
-    router.push(`/?page=${pageNum}`);
-  };
 
   useEffect(() => {
     if (error) {
@@ -47,54 +36,43 @@ export const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  let count = roomsCount;
+  // const [currentPage,setCurrentPage] = useState('')
 
-  if (location) {
-    count = filteredRoomsCount;
-  }
+  // let { location, page = 1 } = router.query;
+  // page = Number(page);
+
+  // const handlePagination = (pageNum) => {
+  //   router.push(`/?page=${pageNum}`);
+  // };
+
+  // let count = roomsCount;
+
+  // if (location) {
+  //   count = filteredRoomsCount;
+  // }
 
   return (
-    <>
-      <section id="rooms" className="container mt-5">
-        <h2 className="mb-3 ml-2 stays-heading">
-          {location ? `Rooms in ${location}` : "All Places"}
-        </h2>
+    <section className="pt-6">
+      <h2 className="text-3xl font-semibold p-3 pb-5 text-indigo-800">
+        Most picked.
+      </h2>
 
-        <Link href="/search" passHref>
-          <a className="ml-2 back-to-search">
-            <i className="fa fa-arrow-left" /> Back to Search
-          </a>
-        </Link>
-        <div className="row">
-          {allRooms && allRooms.length === 0 ? (
-            <div className="alert alert-danger mt-5 w-100">
-              No Rooms Available.
-            </div>
-          ) : (
-            allRooms.map((room) => {
-              const { _id: id } = room;
-              return <RoomItem key={id} id={id} {...room} />;
-            })
-          )}
-        </div>
-      </section>
+      <div className="flex items-center flex-col md:flex-row md:space-x-3 p-3">
+        {allRooms?.slice(0, 4).map((item) => {
+          const { name, images, _id: id, pricePerNight, address } = item;
 
-      {resPerPage < count && (
-        <div className="d-flex justify-content-center mt-5">
-          <Pagination
-            activePage={page}
-            itemsCountPerPage={resPerPage}
-            totalItemsCount={roomsCount}
-            onChange={handlePagination}
-            nextPageText="Next"
-            prevPageText="Prev"
-            firstPageText="First"
-            lastPageText="Last"
-            itemClass="page-item"
-            linkClass="page-link"
-          />
-        </div>
-      )}
-    </>
+          return (
+            <RoomItem
+              name={name}
+              images={images}
+              pricePerNight={pricePerNight}
+              address={address}
+              key={id}
+              id={id}
+            />
+          );
+        })}
+      </div>
+    </section>
   );
 };

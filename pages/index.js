@@ -5,6 +5,7 @@ import { getRooms } from "../redux/actions/roomAction";
 import { wrapper } from "../redux/store";
 import { Hero } from "../components/Layout/Hero";
 import { Explore } from "../components/Layout/Explore";
+import { Home } from "../containers/Home";
 
 export default function Index() {
   return (
@@ -12,6 +13,7 @@ export default function Index() {
       <Hero />
       <main className="max-w-6xl mx-auto pb-32">
         <Explore />
+        <Home />
       </main>
     </Layout>
   );
