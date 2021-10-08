@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export const RoomItem = ({ images, id, name, pricePerNight, address }) => {
+export const RoomItem = ({ images, name, pricePerNight, address }) => {
   return (
     <Link href="/" passHref>
       <div className="relative hover:transform hover:-translate-y-3 rounded-xl group mt-5 md:mt-0 cursor-pointer transition duration-150 ease-in">

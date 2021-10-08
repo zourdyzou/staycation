@@ -6,6 +6,7 @@ import { wrapper } from "../redux/store";
 import { Hero } from "../components/Layout/Hero";
 import { Explore } from "../components/Layout/Explore";
 import { Home } from "../containers/Home";
+import { CardFeatured } from "../components/Card/CardSlider";
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
       <main className="max-w-6xl mx-auto pb-32">
         <Explore />
         <Home />
+        <CardFeatured />
       </main>
     </Layout>
   );

@@ -10,13 +10,13 @@
     "seeder": "node utils/seeder"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.4",
     "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.21.4",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.27.0",
     "crypto": "^1.0.1",
     "easyinvoice": "^1.0.147",
-    "feather-icons": "^4.28.0",
     "framer-motion": "^4.1.17",
     "mdbreact": "^5.1.0",
     "moment": "^2.29.1",
@@ -44,7 +44,6 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.1",
     "tailwind-scrollbar-hide": "^1.0.3",
-    "twin.macro": "^2.7.0",
     "validator": "^13.6.0"
   },
   "devDependencies": {

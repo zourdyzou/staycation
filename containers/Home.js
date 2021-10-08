@@ -52,7 +52,7 @@ export const Home = () => {
   // }
 
   return (
-    <section className="pt-6">
+    <section className="pt-6 pb-6">
       <h2 className="text-3xl font-semibold p-3 pb-5 text-indigo-800">
         Most picked.
       </h2>

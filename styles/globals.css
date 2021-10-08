@@ -38,6 +38,16 @@ body {
   color: white;
 }
 
+.slick-track {
+  display: flex;
+}
+.slick-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
 /* Loader */
 
 .center-loader {
