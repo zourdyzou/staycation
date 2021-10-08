@@ -1,170 +1,200 @@
 [
   {
-    "name": "Charming Studio < 10 Miles to Wells' Beaches!",
-    "pricePerNight": 168,
-    "description": "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from the vacation rental,",
-    "address": "4667 Bicetown Street, New York, NY, 10004",
-    "guestCapacity": 1,
-    "numOfBeds": 1,
-    "internet": true,
+    "name": "Wiedzcor Hotel",
+    "pricePerNight": 45,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Poznan, Poland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
     "breakfast": true,
-    "airConditioning": false,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
     "petsAllowed": false,
     "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
     "images": [
       {
-        "public_id": "bookit/rooms/1_bzynlv",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590762/bookit/rooms/1_bzynlv.jpg"
+        "public_id": "staycation/rooms/7_q2e24zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685052/rooms/mohd-elle-oji_NGmBI5o-unsplash_pw4f0m.jpg"
       },
       {
-        "public_id": "bookit/rooms/2_s1u52n",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590761/bookit/rooms/2_s1u52n.jpg"
-      }
-    ],
-    "category": "King"
-  },
-  {
-    "name": "Picturesque 2-Story Farmhouse w/Private Hot Tub",
-    "pricePerNight": 242,
-    "description": "Find plenty of space for a family or a large group at this picturesque Wells home, the perfect spot for a relaxing getaway in charming, quintessential Maine style! Spend your days on the beautiful nearby beaches, and come home to a large backyard and orchard where your kids can play, as well as a patio with a gas grill for barbecues on summer afternoons.",
-    "address": "200 Olympic Dr, Stafford, VS, 22554",
-    "guestCapacity": 2,
-    "numOfBeds": 2,
-    "internet": true,
-    "breakfast": false,
-    "airConditioning": true,
-    "petsAllowed": false,
-    "cleaningService": true,
-    "images": [
+        "public_id": "staycation/rooms/7_he2144wzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685019/rooms/dayana-brooke-dZbBlss3FyE-unsplash_sxtdep.jpg"
+      },
       {
-        "public_id": "bookit/rooms/3_quuli7.jpg",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590762/bookit/rooms/3_quuli7.jpg"
+        "public_id": "staycation/rooms/7_hq242nzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685040/rooms/sigmund-sRoX74sasiI-unsplash_ngoj2c.jpg"
       }
     ],
     "category": "Twins"
   },
   {
-    "name": "Downtown Portsmouth Private Getaway! Hot Tub",
-    "pricePerNight": 85,
-    "description": "Absolutely the best location in Portsmouth! Beautifully furnished, this spacious and private home is perfectly suited for taking in all of the must-see sights and historic landmarks that make this vibrant city so unique. Situated near the banks of the Piscataqua River just minutes away from Strawbery Banke Museum, Prescott Park, USS Albacore Museum, Market Square and more!",
-    "address": "3747 Parkway Street, Apple Valley, CA, 92307",
-    "guestCapacity": 3,
-    "numOfBeds": 2,
-    "internet": true,
-    "breakfast": true,
-    "airConditioning": true,
-    "petsAllowed": true,
-    "cleaningService": false,
-    "images": [
-      {
-        "public_id": "bookit/rooms/4_sju0ql",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590765/bookit/rooms/4_sju0ql.jpg"
-      }
-    ],
-    "category": "King"
-  },
-  {
-    "name": "Spacious Suite in a quiet Boston neighborhood.",
-    "pricePerNight": 95,
+    "name": "Olive Beau Resort",
+    "pricePerNight": 75,
     "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    "address": "224 Cherry St, Buffalo, NY, 14202",
-    "guestCapacity": 6,
-    "numOfBeds": 3,
-    "internet": true,
+    "address": "Marakesh, Morocco",
+    "guestCapacity": 2,
+    "numOfBeds": "3 beds",
+    "internet": "5 mbp/s",
     "breakfast": true,
-    "airConditioning": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
     "petsAllowed": false,
     "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "1 Television",
     "images": [
       {
-        "public_id": "bookit/rooms/5_jmydt6",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590762/bookit/rooms/5_jmydt6.jpg"
+        "public_id": "staycation/rooms/7_q12313q",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685026/rooms/obi-onyeador-gUW8waI74AQ-unsplash_vdu9e3.jpg"
       },
       {
-        "public_id": "bookit/rooms/6_nwmr5f",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590764/bookit/rooms/6_nwmr5f.jpg"
-      }
-    ],
-    "category": "Single"
-  },
-  {
-    "name": "Shangri-La Hotel, Washington",
-    "pricePerNight": 105,
-    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    "address": "4724  Mudlick Road, Yakima, WA, 98902",
-    "guestCapacity": 2,
-    "numOfBeds": 1,
-    "internet": true,
-    "breakfast": true,
-    "airConditioning": true,
-    "petsAllowed": false,
-    "cleaningService": true,
-    "images": [
+        "public_id": "staycation/rooms/7_he131nn42zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685025/rooms/zheka-boychenko-SIg-ZsJPf5Q-unsplash_ffncmk.jpg"
+      },
       {
-        "public_id": "bookit/rooms/7_hshhzq",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590764/bookit/rooms/7_hshhzq.jpg"
-      }
-    ],
-    "category": "King"
-  },
-  {
-    "name": "Hotel Chimayo de Santa Fe Rooms",
-    "pricePerNight": 36,
-    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    "address": "1029  Godfrey Street, Portland, OR, 97205",
-    "guestCapacity": 2,
-    "numOfBeds": 2,
-    "internet": true,
-    "breakfast": true,
-    "airConditioning": true,
-    "petsAllowed": false,
-    "cleaningService": true,
-    "images": [
-      {
-        "public_id": "bookit/rooms/8_crn0xy",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590765/bookit/rooms/8_crn0xy.jpg"
+        "public_id": "staycation/rooms/7_h132n2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684940/rooms/franck-morisset-UFhM8kMuQbo-unsplash_clbdjg.jpg"
       }
     ],
     "category": "Twins"
   },
   {
-    "name": "Hotel Garni Ischgl ☆ 4 star room comfort",
-    "pricePerNight": 82,
+    "name": "Coirn Harnes Hotel",
+    "pricePerNight": 63,
     "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    "address": "2645  Parrish Avenue, SAINT LOUIS, MO, 63116",
-    "guestCapacity": 5,
-    "numOfBeds": 3,
-    "internet": true,
-    "breakfast": true,
-    "airConditioning": true,
-    "petsAllowed": false,
-    "cleaningService": false,
-    "images": [
-      {
-        "public_id": "bookit/rooms/9_konrjf",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590849/bookit/rooms/9_konrjf.jpg"
-      }
-    ],
-    "category": "Single"
-  },
-  {
-    "name": "The Spa at Base Camp at Kerry Hotel",
-    "pricePerNight": 76,
-    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
-    "address": "3118  Red Hawk Road, Garfield, MN, 56332",
+    "address": "Coirn Loch, Scotland",
     "guestCapacity": 2,
-    "numOfBeds": 1,
-    "internet": true,
-    "breakfast": false,
-    "airConditioning": true,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
     "petsAllowed": false,
     "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
     "images": [
       {
-        "public_id": "bookit/rooms/10_w8w8yi",
-        "url": "https://res.cloudinary.com/bookit/image/upload/v1618590840/bookit/rooms/10_w8w8yi.jpg"
+        "public_id": "staycation/rooms/7_q12jzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684996/rooms/q-u-i-giL2fHNr3Lc-unsplash_n9gok4.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h134sq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684935/rooms/alexander-huang-WHNPtAilodU-unsplash_sgr6cs.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h13jjw2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684930/rooms/sara-dubler-Koei_7yYtIo-unsplash_h1ux39.jpg"
       }
     ],
-    "category": "Single"
+    "category": "Twins"
+  },
+  {
+    "name": "Courdrup Hotel",
+    "pricePerNight": 63,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Normandy, France",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q131313zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684914/rooms/arcorias-g7z__ymzHEg-unsplash_c3wuts.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1124991sq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685019/rooms/dayana-brooke-dZbBlss3FyE-unsplash_sxtdep.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1r25w2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684931/rooms/mike-swigunski-k9Zeq6EH_bk-unsplash_iqe6zd.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Le Zoustche Hotel",
+    "pricePerNight": 83,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Zurich, Switzerland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "3 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q1qejnzq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685064/rooms/the-anam-_twiIcIsp2s-unsplash_wwusxu.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h30024jsq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685026/rooms/obi-onyeador-gUW8waI74AQ-unsplash_vdu9e3.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1341492zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685040/rooms/sigmund-sRoX74sasiI-unsplash_ngoj2c.jpg"
+      }
+    ],
+    "category": "Kings"
+  },
+  {
+    "name": "Greene Hotel",
+    "pricePerNight": 75,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Amsterdam, Holland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_q113131jdq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684915/rooms/artie-kostenko-a6EzvPjXfBY-unsplash_bq2kc4.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h11414sq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633685025/rooms/zheka-boychenko-SIg-ZsJPf5Q-unsplash_ffncmk.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1fk2zq",
+        "url": "https://res.cloudinary.com/zourdyzh/image/upload/v1633684940/rooms/franck-morisset-UFhM8kMuQbo-unsplash_clbdjg.jpg"
+      }
+    ],
+    "category": "Twins"
   }
 ]

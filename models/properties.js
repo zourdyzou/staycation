@@ -26,7 +26,7 @@ const propertiesSchema = new mongoose.Schema({
     required: [true, "Please enter room guestCapacity"],
   },
   numOfBeds: {
-    type: Number,
+    type: String,
     required: [true, "Please enter room numOfBeds in the room"],
   },
   internet: {
@@ -54,7 +54,7 @@ const propertiesSchema = new mongoose.Schema({
     default: false,
   },
   furnished: {
-    type: Boolean,
+    type: String,
     default: false,
   },
   bathroom: {

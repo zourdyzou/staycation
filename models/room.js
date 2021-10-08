@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-const moment = require("moment");
-
 const roomSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -28,19 +26,23 @@ const roomSchema = new mongoose.Schema({
     required: [true, "Please enter room guestCapacity"],
   },
   numOfBeds: {
-    type: Number,
+    type: String,
     required: [true, "Please enter room numOfBeds in the room"],
   },
   internet: {
-    type: Boolean,
+    type: String,
     default: false,
   },
   breakfast: {
     type: Boolean,
     default: false,
   },
+  livingRoom: {
+    type: String,
+    default: false,
+  },
   airConditioning: {
-    type: Boolean,
+    type: String,
     default: false,
   },
   petsAllowed: {
@@ -49,6 +51,22 @@ const roomSchema = new mongoose.Schema({
   },
   cleaningService: {
     type: Boolean,
+    default: false,
+  },
+  furnished: {
+    type: String,
+    default: false,
+  },
+  bathroom: {
+    type: String,
+    default: false,
+  },
+  refrigerator: {
+    type: String,
+    default: false,
+  },
+  television: {
+    type: String,
     default: false,
   },
   ratings: {
@@ -107,7 +125,7 @@ const roomSchema = new mongoose.Schema({
   },
   createdAt: {
     type: String,
-    default: moment().format("MMMM Do YYYY"),
+    default: Date.now,
   },
 });
 
