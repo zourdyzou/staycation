@@ -61,7 +61,7 @@ const CardContainer = styled.div`
 `;
 
 const CardImage = styled.div`
-  background-image: url(${({ image }) => image || null});
+  background-image: url(${({ image }) => image || "/animations/airbnb-2.gif"});
   background-size: cover;
   background-position: center;
   height: 15rem;
