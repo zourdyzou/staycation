@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { clearError } from "../redux/actions/roomAction";
 import { RoomItem } from "../components/Room/RoomItem";
 
-export const Home = () => {
+export const RoomsFeatured = () => {
   const dispatch = useDispatch();
   // const router = useRouter();
   const {

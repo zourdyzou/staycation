@@ -16,7 +16,7 @@ export const CardItem = ({
 }) => {
   return (
     <CardContainer className="group cursor-pointer">
-      <CardImage image={image} />
+      <CardImage image={image[0].url} />
 
       <div className="flex flex-col px-6 py-4">
         <div className="flex items-center justify-between py-2">
@@ -28,7 +28,7 @@ export const CardItem = ({
         </div>
 
         <div className="flex items-center justify-between pt-2 pb-4">
-          <p className="flex items-center gap-[8px]">
+          <p className="flex items-center gap-[8px] text-sm">
             <span className="bg-gray-700 rounded-full p-1">
               <LocationMarkerIcon className="h-5 w-5 text-white" />
             </span>
@@ -38,11 +38,11 @@ export const CardItem = ({
             <span className="bg-gray-700 rounded-full p-1">
               <CurrencyPoundIcon className="h-5 w-5 text-white" />
             </span>
-            {price}
+            {price}/night
           </p>
         </div>
 
-        <p className="pt-2 pb-5 text-base">{description}</p>
+        <p className="pt-2 pb-5 text-base">{description.substring(0, 65)}...</p>
       </div>
 
       <button className="rounded-md bg-indigo-600 text-white hover:bg-indigo-900 transition ease-in duration-200 p-4 group-hover:underline">
@@ -61,7 +61,7 @@ const CardContainer = styled.div`
 `;
 
 const CardImage = styled.div`
-  background-image: url(${({ image }) => image || ""});
+  background-image: url(${({ image }) => image || null});
   background-size: cover;
   background-position: center;
   height: 15rem;
