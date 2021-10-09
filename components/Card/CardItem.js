@@ -16,7 +16,7 @@ export const CardItem = ({
 }) => {
   return (
     <CardContainer className="group cursor-pointer">
-      <CardImage image={image[0].url} />
+      <CardImage image={image} />
 
       <div className="flex flex-col px-6 py-4">
         <div className="flex items-center justify-between py-2">

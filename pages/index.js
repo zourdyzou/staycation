@@ -9,6 +9,7 @@ import { Hero } from "../components/Layout/Hero";
 import { Explore } from "../components/Layout/Explore";
 import { RoomsFeatured } from "../containers/RoomsFeatured";
 import { CardFeatured } from "../components/Card/CardContainer";
+import { HomeFeatured } from "../containers/HomeFeatured";
 
 export default function Index() {
   return (
@@ -18,6 +19,7 @@ export default function Index() {
         <Explore />
         <RoomsFeatured />
         <CardFeatured />
+        <HomeFeatured />
       </main>
     </Layout>
   );

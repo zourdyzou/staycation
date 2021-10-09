@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { clearError } from "../redux/actions/roomAction";
 import { RoomItem } from "../components/Room/RoomItem";
 
-export const RoomsFeatured = () => {
+export const HomeFeatured = () => {
   const dispatch = useDispatch();
   // const router = useRouter();
   const {
@@ -36,27 +36,15 @@ export const RoomsFeatured = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // const [currentPage,setCurrentPage] = useState('')
-
-  // let { location, page = 1 } = router.query;
-  // page = Number(page);
-
-  // const handlePagination = (pageNum) => {
-  //   router.push(`/?page=${pageNum}`);
-  // };
-
-  // let count = roomsCount;
-
-  // if (location) {
-  //   count = filteredRoomsCount;
-  // }
-
   return (
-    <section className="pt-6 pb-6">
+    <section className="pt-10 pb-6 h-[500px] py-16">
       <h2 className="text-3xl font-semibold p-3 pb-5 text-indigo-800">
-        Most picked.
+        Tropical Home Stay.
       </h2>
 
+      {/* //* CHANGE THE DATA LATER ON => production ready to the actual rooms data
+    //todo: 1. CREATE MODELS, SCHEMA AND CONTROLLERS FROM HOMESTAY DATA
+*/}
       <div className="flex items-center flex-col md:flex-row md:space-x-3 p-3">
         {allRooms?.slice(0, 4).map((item) => {
           const { name, images, _id: id, pricePerNight, address } = item;
@@ -64,7 +52,7 @@ export const RoomsFeatured = () => {
           return (
             <RoomItem
               name={name}
-              images={images[0].url}
+              images={images[2].url}
               pricePerNight={pricePerNight}
               address={address}
               key={id}

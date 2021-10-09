@@ -10,7 +10,7 @@ export const RoomItem = ({ images, name, pricePerNight, address }) => {
         <div className="relative group-hover:rounded-xl h-[220px] w-72 brightness-75">
           <Image
             className="rounded-xl transition-all duration-500 ease-in-out transform bg-center bg-cover object-cover"
-            src={images[0].url}
+            src={images}
             alt={name}
             layout="fill"
           />

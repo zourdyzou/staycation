@@ -91,7 +91,7 @@ export const CardFeatured = () => {
   // ];
 
   return (
-    <section className="pt-6 mt-20">
+    <section className="pt-6 mt-20 pb-10">
       <h2 className="text-3xl font-semibold p-3 pb-5 text-indigo-800">
         Popular Hotels.
       </h2>
@@ -114,7 +114,7 @@ export const CardFeatured = () => {
               description={item.description}
               location={item.address}
               price={item.pricePerNight}
-              image={item.images}
+              image={item.images[0].url}
             />
           );
         })}
