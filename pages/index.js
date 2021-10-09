@@ -6,7 +6,7 @@ import { wrapper } from "../redux/store";
 import { Hero } from "../components/Layout/Hero";
 import { Explore } from "../components/Layout/Explore";
 import { Home } from "../containers/Home";
-import { CardFeatured } from "../components/Card/CardSlider";
+import { CardFeatured } from "../components/Card/CardContainer";
 
 export default function Index() {
   return (

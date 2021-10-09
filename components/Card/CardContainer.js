@@ -1,16 +1,7 @@
 import React from "react";
-// import Slider from "react-slick";
-// import styled from "styled-components";
+import { CardItem } from "./CardItem";
 
 // import Image from "next/image";
-
-// import {
-//   StarIcon,
-//   CurrencyPoundIcon,
-//   LocationMarkerIcon,
-//   // ChevronLeftIcon,
-//   // ChevronRightIcon,
-// } from "@heroicons/react/outline";
 
 // import { PrimaryButton } from "../Misc/PrimaryButton";
 
@@ -78,6 +69,26 @@ export const CardFeatured = () => {
       pricingText: "USD 99/Day",
       rating: 4.5,
     },
+    {
+      imageSrc:
+        "https://images.unsplash.com/photo-1549294413-26f195200c16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=1024&w=768&q=80",
+      title: "Hotel Baja",
+      description:
+        "Lorem ipsum dolor sit amet, consectur dolori adipiscing elit, sed do eiusmod tempor nova incididunt ut labore et dolore magna aliqua.",
+      locationText: "Palo Alto, CA",
+      pricingText: "USD 19/Day",
+      rating: "5.0",
+    },
+    {
+      imageSrc:
+        "https://images.unsplash.com/photo-1571770095004-6b61b1cf308a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=1024&w=768&q=80",
+      title: "Hudak Homes",
+      description:
+        "Lorem ipsum dolor sit amet, consectur dolori adipiscing elit, sed do eiusmod tempor nova incididunt ut labore et dolore magna aliqua.",
+      locationText: "Arizona, RAK",
+      pricingText: "USD 99/Day",
+      rating: 4.5,
+    },
   ];
 
   return (
@@ -85,6 +96,22 @@ export const CardFeatured = () => {
       <h2 className="text-3xl font-semibold p-3 pb-5 text-indigo-800">
         Popular Hotels.
       </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-5">
+        {cards.map((item, index) => {
+          return (
+            <CardItem
+              key={index}
+              title={item.title}
+              rating={item.rating}
+              description={item.description}
+              location={item.locationText}
+              price={item.pricingText}
+              image={item.imageSrc}
+            />
+          );
+        })}
+      </div>
     </section>
   );
 };
