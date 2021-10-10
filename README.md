@@ -1,3 +1,8 @@
+# Current Project Preview (On Development) 🚧
+
+![screencapture-localhost-3000-2021-10-11-00_34_58](https://user-images.githubusercontent.com/69587933/136708467-1478fc89-cab8-4d25-b551-a825816deee3.png)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -6,6 +11,7 @@ First, run the development server:
 
 ```bash
 npm run dev
+
 # or
 yarn dev
 ```
