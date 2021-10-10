@@ -11,6 +11,7 @@ import { RoomsFeatured } from "../containers/RoomsFeatured";
 import { CardFeatured } from "../components/Card/CardContainer";
 import { HomeFeatured } from "../containers/HomeFeatured";
 import { PopularChoiceFeatured } from "../containers/PopularChoiceFeatured";
+import { Jumbotron } from "../components/Misc/Jumbotron";
 
 export default function Index() {
   return (
@@ -22,6 +23,13 @@ export default function Index() {
         <CardFeatured />
         <HomeFeatured />
         <PopularChoiceFeatured />
+        <Jumbotron
+          img="https://res.cloudinary.com/zourdyzh/image/upload/v1633886567/kazachok_kmxeeh.webp"
+          title="The Greatest Outdoors"
+          description="Wishlists curates by"
+          pitcher="Staycation"
+          buttonText="Check It Out"
+        />
       </main>
     </Layout>
   );
