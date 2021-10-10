@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-// import Link from "next/link";
-
-// import { useRouter } from "next/router";
 
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -10,14 +7,7 @@ import { RoomItem } from "../components/Room/RoomItem";
 
 export const HomeFeatured = () => {
   const dispatch = useDispatch();
-  // const router = useRouter();
-  const {
-    rooms: allRooms,
-    // resPerPage,
-    // roomsCount,
-    // filteredRoomsCount,
-    error,
-  } = useSelector((state) => state.allRooms);
+  const { rooms: allRooms, error } = useSelector((state) => state.allRooms);
 
   useEffect(() => {
     if (error) {
@@ -48,6 +38,8 @@ export const HomeFeatured = () => {
       <div className="flex items-center flex-col md:flex-row md:space-x-3 p-3">
         {allRooms?.slice(0, 4).map((item) => {
           const { name, images, _id: id, pricePerNight, address } = item;
+          const rating = `${Math.random() * (5 - 1 + 1)}`;
+          const tempRating = Number(rating).toFixed(1);
 
           return (
             <RoomItem
@@ -57,6 +49,7 @@ export const HomeFeatured = () => {
               address={address}
               key={id}
               id={id}
+              rating={tempRating}
             />
           );
         })}

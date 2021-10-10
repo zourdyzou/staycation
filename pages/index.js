@@ -10,6 +10,7 @@ import { Explore } from "../components/Layout/Explore";
 import { RoomsFeatured } from "../containers/RoomsFeatured";
 import { CardFeatured } from "../components/Card/CardContainer";
 import { HomeFeatured } from "../containers/HomeFeatured";
+import { PopularChoiceFeatured } from "../containers/PopularChoiceFeatured";
 
 export default function Index() {
   return (
@@ -20,6 +21,7 @@ export default function Index() {
         <RoomsFeatured />
         <CardFeatured />
         <HomeFeatured />
+        <PopularChoiceFeatured />
       </main>
     </Layout>
   );

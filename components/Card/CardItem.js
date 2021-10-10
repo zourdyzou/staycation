@@ -6,6 +6,8 @@ import {
   CurrencyPoundIcon,
 } from "@heroicons/react/outline";
 
+import Image from "next/image";
+
 export const CardItem = ({
   image,
   title,
@@ -16,7 +18,16 @@ export const CardItem = ({
 }) => {
   return (
     <CardContainer className="group cursor-pointer">
-      <CardImage image={image} />
+      {/* <CardImage image={image} /> */}
+
+      <div className="relative h-60 w-full overflow-hidden group-hover:rounded-br-[20px] group-hover:rounded-tl-[20px] transition ease-in-out duration-200">
+        <Image
+          src={image ?? "/animations/airbnb-2.gif"}
+          alt={title}
+          layout="fill"
+          className="rounded-tl-[20px] rounded-br-[20px] bg-cover bg-center transform group-hover:scale-125 transition ease-in duration-200 "
+        />
+      </div>
 
       <div className="flex flex-col px-6 py-4">
         <div className="flex items-center justify-between py-2">
@@ -45,7 +56,10 @@ export const CardItem = ({
         <p className="pt-2 pb-5 text-base">{description.substring(0, 65)}...</p>
       </div>
 
-      <button className="rounded-md bg-indigo-600 text-white hover:bg-indigo-900 transition ease-in duration-200 p-4 group-hover:underline">
+      <button
+        type="button"
+        className="rounded-md w-full bg-indigo-600 text-white hover:bg-indigo-900 transition ease-in duration-200 p-4 group-hover:underline"
+      >
         View Details
       </button>
     </CardContainer>
@@ -60,7 +74,7 @@ const CardContainer = styled.div`
   overflow: hidden;
 `;
 
-const CardImage = styled.div`
+export const CardImage = styled.div`
   background-image: url(${({ image }) => image || "/animations/airbnb-2.gif"});
   background-size: cover;
   background-position: center;

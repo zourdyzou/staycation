@@ -96,13 +96,13 @@ export const CardFeatured = () => {
         Popular Hotels.
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-5 md:pl-10 w-full">
         {data?.slice(1, 4).map((item) => {
           const { _id: id } = item;
 
           // TODO=> change this later
           //! HARD CODED
-          const rating = `${Math.random() * 5 + 1}`;
+          const rating = `${Math.random() * 5}`;
 
           const newRating = Number(rating).toFixed(1);
 
