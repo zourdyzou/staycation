@@ -5,7 +5,9 @@ import { Login } from "../components/Auth/Login";
 export default function LoginPage() {
   return (
     <Layout title="Login User | staycation.com">
-      <Login />
+      <main className="max-w-6xl mx-auto pt-24 pb-0 md:py-24">
+        <Login />
+      </main>
     </Layout>
   );
 }

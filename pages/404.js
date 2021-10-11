@@ -6,11 +6,11 @@ import { Layout } from "../components/Layout/Layout";
 const NotFoundPage = () => {
   return (
     <Layout title="404 The page is not found | Staycation">
-      <main className="max-w-6xl mx-auto pt-24 pb-0 md:py-24">
+      <main className="max-w-6xl mx-auto pt-24 pb-0 md:py-24 selectDisable select-none">
         <div className="flex flex-col justify-center items-center transform translate-x-10 sm:translate-x-0">
-          <div className="relative h-[400px] w-[500px] transform translate-x-5 sm:translate-x-0">
+          <div className="relative h-[400px] w-[500px] transform translate-x-5 sm:translate-x-0 selectDisable select-none">
             <Image
-              className="bg-cover bg-center"
+              className="bg-cover bg-center selectDisable select-none"
               src="/animations/404.gif"
               alt="page is not found | staycation"
               layout="fill"

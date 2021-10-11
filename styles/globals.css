@@ -48,6 +48,14 @@ body {
   margin-bottom: 0.25rem;
 }
 
+.selectDisable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 /* Loader */
 
 .center-loader {
@@ -429,10 +437,6 @@ body {
   outline: 0;
   border-radius: 4px;
   background: white;
-}
-
-input::placeholder {
-  color: #aab7c4;
 }
 
 .StripeElement--focus {
