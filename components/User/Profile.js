@@ -5,7 +5,15 @@ import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
-import { ButtonLoader } from "../Layout/ButtonLoader";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  UserIcon,
+  ShieldExclamationIcon,
+  AtSymbolIcon,
+} from "@heroicons/react/outline";
+import { LockClosedIcon } from "@heroicons/react/solid";
+
 import { Loader } from "../Layout/Loader";
 import { updateProfile, clearError } from "../../redux/actions/userAction";
 import { UPDATE_PROFILE_RESET } from "../../redux/constants/userConstant";
@@ -92,87 +100,105 @@ export const Profile = () => {
   return loading ? (
     <Loader />
   ) : (
-    <div className="container container-fluid">
-      <div className="row wrapper">
-        <div className="col-10 col-lg-5">
-          <form className="shadow-lg" onSubmit={registerHandler}>
-            <h1 className="mb-3">Update Profile</h1>
-
-            <div className="form-group">
-              <label htmlFor="name_field">Full Name</label>
-              <input
-                type="text"
-                id="name_field"
-                className="form-control"
-                name="name"
-                value={name}
-                onChange={handleChange}
+    <div className="px-10 py-10 flex justify-center">
+      <form className="flex flex-col w-96" onSubmit={registerHandler}>
+        {/* HEADER */}
+        <div className="flex flex-col items-center space-y-4">
+          <Link href="/" passHref>
+            <div className="relative h-10 w-52 cursor-pointer select-none">
+              <Image
+                src="/images/logo/Staycation.png"
+                layout="fill"
+                className="select-none"
+                alt="Logo Staycation.com best places for spending your travel time!"
               />
             </div>
-
-            <div className="form-group">
-              <label htmlFor="email_field">Email</label>
-              <input
-                type="email"
-                id="email_field"
-                className="form-control"
-                name="email"
-                value={email}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="password_field">Password</label>
-              <input
-                type="password"
-                id="password_field"
-                className="form-control"
-                name="password"
-                value={password}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="avatar_upload">Avatar</label>
-              <div className="d-flex align-items-center">
-                <div>
-                  <figure className="avatar mr-3 item-rtl">
-                    <img
-                      src={avatarPreview}
-                      className="rounded-circle"
-                      alt="profile avatar"
-                    />
-                  </figure>
-                </div>
-                <div className="custom-file">
-                  <input
-                    type="file"
-                    className="custom-file-input"
-                    name="avatar"
-                    accept="images/*"
-                    id="customFile"
-                    onChange={handleChange}
-                  />
-                  <label className="custom-file-label" htmlFor="customFile">
-                    Choose Avatar
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <button
-              id="login_button"
-              type="submit"
-              className="btn btn-block py-3"
-              disabled={!!updateLoading}
-            >
-              {updateLoading ? <ButtonLoader /> : "UPDATE"}
-            </button>
-          </form>
+          </Link>
+          <h1 className="text-2xl text-indigo-600 font-bold">
+            Welcome To Your Profile
+          </h1>
+          <p>Change your personal data information.</p>
         </div>
-      </div>
+
+        {/* INPUT */}
+        <div className="py-6 space-y-3">
+          <div className="flex items-center space-x-3 border py-2 px-1 pl-2 rounded-md focus:border-indigo-700">
+            <UserIcon className="h-6 w-6 " />
+            <input
+              type="name"
+              name="name"
+              className="outline-none focus:outline-none border-none bg-transparent"
+              value={name}
+              placeholder="Full Name"
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="flex items-center space-x-3 border py-2 px-1 pl-2 rounded-md focus:border-indigo-700">
+            <AtSymbolIcon className="h-6 w-6 " />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="outline-none focus:outline-none border-none bg-transparent"
+              value={email}
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div className="flex items-center space-x-3 border py-2 px-1 pl-2 rounded-md focus:border-indigo-700">
+            <ShieldExclamationIcon className="h-6 w-6 " />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="outline-none focus:outline-none border-none bg-white placeholder-transparent"
+              value={password}
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+        </div>
+
+        <div className="flex items-center p-2 bg-gradient-to-tr from-blue-500 to-purple-600 text-white rounded-md mb-6">
+          <figure className="relative h-12 w-[50px]">
+            <Image
+              src={avatarPreview}
+              className="rounded-full"
+              layout="fill"
+              alt="profile avatar"
+            />
+          </figure>
+
+          <div className="flex items-center space-x-10">
+            <input
+              type="file"
+              className="p-2 bg-transparent hidden"
+              name="avatar"
+              accept="images/*"
+              id="customFile"
+              onChange={handleChange}
+            />
+            <label
+              className="px-10 py-2 bg-indigo-300 text-black rounded-md"
+              htmlFor="customFile"
+            >
+              Choose Avatar
+            </label>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          disabled={!!updateLoading}
+        >
+          <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+            <LockClosedIcon
+              className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+              aria-hidden="true"
+            />
+          </span>
+          Save
+        </button>
+      </form>
     </div>
   );
 };
