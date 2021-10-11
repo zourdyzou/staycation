@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import { UserIcon, ShieldExclamationIcon } from "@heroicons/react/outline";
+import { AtSymbolIcon, ShieldExclamationIcon } from "@heroicons/react/outline";
 
 import { signIn } from "next-auth/client";
 import { toast } from "react-toastify";
@@ -63,9 +63,10 @@ export const Login = () => {
         {/* INPUT */}
         <div className="py-6 space-y-3">
           <div className="flex items-center space-x-3 border py-2 px-1 pl-2 rounded-md focus:border-indigo-700">
-            <UserIcon className="h-6 w-6 " />
+            <AtSymbolIcon className="h-6 w-6 " />
             <input
               type="email"
+              placeholder="email"
               className="outline-none focus:outline-none border-none bg-transparent"
               value={email}
               onChange={({ target }) => setEmail(target.value)}
@@ -75,6 +76,7 @@ export const Login = () => {
             <ShieldExclamationIcon className="h-6 w-6 " />
             <input
               type="password"
+              placeholder="password"
               className="outline-none focus:outline-none border-none bg-white placeholder-transparent"
               value={password}
               onChange={({ target }) => setPassword(target.value)}
