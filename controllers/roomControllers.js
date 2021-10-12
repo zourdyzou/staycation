@@ -1,8 +1,8 @@
-import Room from "../models/room";
-
 import ErrorBoundary from "../utils/errorBoundary";
 import catchAsyncError from "../middlewares/catchAsyncError";
 import APIFeatures from "../utils/apiFeatures";
+
+const Room = require("../models/room");
 
 // get all rooms => /api/rooms
 const allRooms = catchAsyncError(async (req, res) => {

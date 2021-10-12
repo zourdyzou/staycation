@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
-const properties = require("../data/properties.json");
+const properties = require("../data/rooms.json");
 
 // const dbConnect = require("../config/dbConnect");
 
-// const Room = require("../models/room");
+const Room = require("../models/room");
 
-const Properties = require("../models/properties");
+// const Properties = require("../models/properties");
 
 mongoose.connect(
   "mongodb+srv://brothergoode:OyTOj11THOLTCciu@cluster0.s2ajg.mongodb.net/Cluster0?retryWrites=true&w=majority",
@@ -18,11 +18,11 @@ mongoose.connect(
 const seedRooms = async () => {
   try {
     // delete previous room collection
-    await Properties.deleteMany();
+    await Room.deleteMany();
     console.log("Previous data deleted (mock data)");
 
     // push a fresh data
-    await Properties.insertMany(properties);
+    await Room.insertMany(properties);
     console.log("All properties are added");
 
     process.exit();

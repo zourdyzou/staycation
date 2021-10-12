@@ -67,7 +67,7 @@ export const Login = () => {
             <input
               type="email"
               placeholder="email"
-              className="outline-none focus:outline-none border-none bg-transparent"
+              className="outline-none focus:outline-none border-none bg-transparent w-full"
               value={email}
               onChange={({ target }) => setEmail(target.value)}
             />

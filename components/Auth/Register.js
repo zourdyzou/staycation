@@ -120,7 +120,7 @@ export const Register = () => {
               type="email"
               name="email"
               placeholder="Email"
-              className="outline-none focus:outline-none border-none bg-transparent"
+              className="outline-none focus:outline-none border-none bg-transparent w-full"
               value={email}
               onChange={(e) => handleChange(e)}
             />
