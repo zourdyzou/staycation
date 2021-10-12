@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { LockClosedIcon } from "@heroicons/react/solid";
 
-import { ButtonLoader } from "../Layout/ButtonLoader";
 import { forgotPassword, clearError } from "../../redux/actions/userAction";
 
 export const ForgotPassword = () => {
@@ -39,28 +39,40 @@ export const ForgotPassword = () => {
   };
 
   return (
-    <div className="row wrapper">
-      <div className="col-10 col-lg-5">
-        <form className="shadow-lg" onSubmit={forgotPasswordHandler}>
-          <h1 className="mb-3">Forgot Password</h1>
-          <div className="form-group">
-            <label htmlFor="email_field">Enter Email</label>
+    <div className="pt-36 max-w-lg mx-auto px-4">
+      <div className=" flex flex-col bg-gradient-to-tr from-blue-500 to-purple-300 py-6 px-4 rounded-md">
+        <form
+          className="flex flex-col space-y-4"
+          onSubmit={forgotPasswordHandler}
+        >
+          <h1 className="text-2xl text-white font-semibold py-2 pb-8">
+            Forgot Password
+          </h1>
+          <div className="flex flex-col py-3 space-y-2">
+            <label htmlFor="email_field" className="text-white">
+              Enter Email:
+            </label>
             <input
               type="email"
               id="email_field"
-              className="form-control"
+              className="py-2 bg-transparent outline-none focus:border-gray-200 border-2 rounded-md text-white"
               value={email}
               onChange={({ target }) => setEmail(target.value)}
             />
           </div>
 
           <button
-            id="forgot_password_button"
             type="submit"
-            className="btn btn-block py-3"
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             disabled={!!loading}
           >
-            {loading ? <ButtonLoader /> : "Send Email"}
+            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+              <LockClosedIcon
+                className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                aria-hidden="true"
+              />
+            </span>
+            Send Email
           </button>
         </form>
       </div>
