@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { Filter } from "../components/Misc/Filter";
-import { Pagination } from "../components/Misc/Pagination";
 import { clearError } from "../redux/actions/propertiesAction";
+import { Pagination } from "../components/Misc/Pagination";
 
 import { paginate } from "../utils/paginate";
+import { CardItem } from "../components/Card/CardItem";
 
 export const Property = () => {
   const dispatch = useDispatch();
@@ -14,9 +15,9 @@ export const Property = () => {
     error,
   } = useSelector((state) => state.allProperties);
 
-  const paginatedData = paginate(data);
+  const { page } = useSelector((state) => state.pagination);
 
-  console.log(paginatedData);
+  const paginatedData = paginate(data);
 
   useEffect(() => {
     if (error) {
@@ -32,6 +33,7 @@ export const Property = () => {
 
       dispatch(clearError());
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -40,14 +42,38 @@ export const Property = () => {
       <h2 className="text-indigo-600 text-2xl font-semibold py-16 px-4">
         All Listed Property.
       </h2>
-      <div>
+      <div className="flex flex-col">
         {/* FILTER & PAGINATION */}
-        <div className="flex justify-between items-center px-5">
+        <div className="flex justify-between items-center px-5 py-10">
           <Filter />
+
+          {/* PAGINATION */}
           <Pagination data={paginatedData} />
         </div>
 
         {/* CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-10 h-screen px-4">
+          {paginatedData[page].map((item) => {
+            const { _id: id } = item;
+
+            // TODO=> change this later
+            //! HARD CODED
+            const rating = `${Math.random() * 5}`;
+
+            const newRating = Number(rating).toFixed(1);
+            return (
+              <CardItem
+                key={id}
+                title={item.name}
+                rating={newRating}
+                description={item.description}
+                location={item.address}
+                price={item.pricePerNight}
+                image={item.images[0].url}
+              />
+            );
+          })}
+        </div>
       </div>
     </main>
   );

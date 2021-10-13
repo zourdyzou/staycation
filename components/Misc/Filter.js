@@ -21,7 +21,7 @@ export const Filter = () => {
 
       {toggleFilter && (
         <>
-          <div className="absolute top-12 rounded-[4px] px-2 py-3 bg-gradient-to-tl from-indigo-700 to-green-400 flex flex-col space-y-2 w-full">
+          <div className="absolute top-12 rounded-[4px] px-2 py-3 bg-gradient-to-tl from-indigo-700 to-green-400 flex flex-col space-y-2 w-full z-50">
             <button
               onClick={() => setToggleFilter(false)}
               name="low"

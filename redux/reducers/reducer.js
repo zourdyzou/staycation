@@ -19,6 +19,7 @@ import {
 import {
   getPropertiesReducer,
   propertiesDetailReducer,
+  paginationReducer,
 } from "./propertiesReducer";
 
 export const reducers = combineReducers({
@@ -35,4 +36,5 @@ export const reducers = combineReducers({
   bookingDetails: bookingDetailsReducer,
   allProperties: getPropertiesReducer,
   propertyDetails: propertiesDetailReducer,
+  pagination: paginationReducer,
 });
