@@ -1,17 +1,21 @@
 import React from "react";
 import { getSession } from "next-auth/client";
-
+import { useRouter } from "next/router";
 import { getMyBookings } from "../../redux/actions/bookingAction";
 import { Layout } from "../../components/Layout/Layout";
 import { MyBooking } from "../../components/Booking/MyBooking";
+import { BreadCrumbs } from "../../components/Misc/BreadCrumbs";
 import { wrapper } from "../../redux/store";
 
 // TODO: NOT PERMANENT LATER WILL BE CHANGE LATER
 
 const MyBookingPage = () => {
+  const router = useRouter();
+
   return (
     <Layout title="My Booking | staycation.com">
-      <main className="max-w-6xl mx-auto pb-32">
+      <BreadCrumbs link={router.pathname.slice(1, 8)} />
+      <main className="max-w-6xl mx-auto pb-0 md:pb-32 transform -translate-y-10">
         <MyBooking />
       </main>
     </Layout>

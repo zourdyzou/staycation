@@ -5,7 +5,7 @@ import { Layout } from "../components/Layout/Layout";
 export default function Index() {
   return (
     <Layout>
-      <main className="max-w-6xl mx-auto pt-24 pb-0  md:py-24">
+      <main className="max-w-6xl mx-auto pt-24 pb-0 md:py-24">
         <Register />
       </main>
     </Layout>
