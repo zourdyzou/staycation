@@ -1,5 +1,5 @@
 export const paginate = (property) => {
-  const itemPerPages = 8;
+  const itemPerPages = 9;
   const pages = Math.ceil(property.length / itemPerPages);
 
   const newProperties = Array.from({ length: pages }, (_, index) => {

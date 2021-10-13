@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const properties = require("../data/rooms.json");
+const properties = require("../data/properties.json");
 
 // const dbConnect = require("../config/dbConnect");
 
-const Room = require("../models/room");
+const Room = require("../models/properties");
 
 // const Properties = require("../models/properties");
 

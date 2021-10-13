@@ -328,5 +328,269 @@
       }
     ],
     "category": "Twins"
+  },
+  {
+    "name": "Dubois Hotel",
+    "pricePerNight": 105,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Lisbon, Portugal",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_qdbw3131jdq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137527/property/florian-giorgio-mbB_e6M1Zso-unsplash_ldvmr3.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hqei14sq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137478/property/engin-akyurt-JgVn5v2FYok-unsplash_glipdq.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1qe1302zq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137509/property/paolo-nicolello-2gOxKj594nM-unsplash_wr9x8i.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Tranquil Hotel",
+    "pricePerNight": 115,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "London, United Kingdom",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_qdbw3131jdq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137429/property/vita-vilcina-KtOid0FLjqU-unsplash_wpiwdm.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hqei14sq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137441/property/patrick-robert-doyle-AH8zKXqFITA-unsplash_ufaq5a.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1qe1302zq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137478/property/engin-akyurt-JgVn5v2FYok-unsplash_glipdq.jpg"
+      }
+    ],
+    "category": "King"
+  },
+  {
+    "name": "Le Magnifico Resort",
+    "pricePerNight": 59,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Krakow, Poland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_qdbw3131jdq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137363/property/daniel-faust-pQO10MluyrE-unsplash_mn2gvt.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hqei14sq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137294/property/alexander-kaunas-G6eXUCi8JgA-unsplash_q4g1zb.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1qe1302zq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137429/property/vita-vilcina-KtOid0FLjqU-unsplash_wpiwdm.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Nomieczke Resort",
+    "pricePerNight": 79,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Krakow, Poland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_qdbw3131jdq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137306/property/fernando-alvarez-rodriguez-M7GddPqJowg-unsplash_kxqw3u.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hqei14sq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137169/property/alexander-kaunas-67-sOi7mVIk-unsplash_q20fst.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1qe1302zq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137155/property/reisetopia-yoOeM6iXVPY-unsplash_fbhzpf.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Zagreb Resort",
+    "pricePerNight": 59,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Krakow, Poland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_qdbw3131jdq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137300/property/note-thanun-LMd7IfbnPsU-unsplash_cwwrgr.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hqei14sq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137181/property/sidekix-media-g8tb9SXqZVQ-unsplash_bv8b11.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1qe1302zq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137171/property/manuel-moreno-DGa0LQ0yDPc-unsplash_mdhbm9.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Koenigslava Resort",
+    "pricePerNight": 59,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Krakow, Poland",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_qdbw3131jdq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137429/property/vita-vilcina-KtOid0FLjqU-unsplash_wpiwdm.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hqei14sq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137300/property/note-thanun-LMd7IfbnPsU-unsplash_cwwrgr.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1qe1302zq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137155/property/reisetopia-yoOeM6iXVPY-unsplash_fbhzpf.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Requiem Resort",
+    "pricePerNight": 84,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Madrid, Spain",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_qdbw3131jdq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137441/property/patrick-robert-doyle-AH8zKXqFITA-unsplash_ufaq5a.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hqei14sq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137317/property/daniel-klaffke-RwOmCOGPUJA-unsplash_uvtmon.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1qe1302zq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137383/property/gerson-repreza-CepDpEiALqM-unsplash_supcgh.jpg"
+      }
+    ],
+    "category": "Twins"
+  },
+  {
+    "name": "Le Ganache Resort",
+    "pricePerNight": 79,
+    "description": "Our largest room with a queen bed and foldable sofa. Comfortably fits 2-3 adults, four adults maximum. Decorated with Irish-themed colors and arts. It has a private bathroom with a shower, equipped with smart TV, mini-fridge, desk, chairs. Enjoy City views at the sitting area by the window. Located on the 3rd floor with no elevator.",
+    "address": "Bordeaux, France",
+    "guestCapacity": 2,
+    "numOfBeds": "2 beds",
+    "internet": "5 mbp/s",
+    "breakfast": true,
+    "airConditioning": "2 unit",
+    "livingRoom": "2 main room",
+    "petsAllowed": false,
+    "cleaningService": true,
+    "furnished": "Furnished",
+    "bathroom": "2 Bathroom",
+    "refrigerator": "1 Refrigerator",
+    "television": "2 Television",
+    "images": [
+      {
+        "public_id": "staycation/rooms/7_qdbw3131jdq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137300/property/note-thanun-LMd7IfbnPsU-unsplash_cwwrgr.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_hqei14sq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137186/property/ridhwan-nordin-s6cH7n3eoqY-unsplash_s5fulw.jpg"
+      },
+      {
+        "public_id": "staycation/rooms/7_h1qe1302zq",
+        "url": "https://res.cloudinary.com/zenlock/image/upload/v1634137171/property/manuel-moreno-DGa0LQ0yDPc-unsplash_mdhbm9.jpg"
+      }
+    ],
+    "category": "King"
   }
 ]
