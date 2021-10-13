@@ -1,6 +1,7 @@
 import React from "react";
-
 import { useRouter } from "next/router";
+import { getAllProperties } from "../redux/actions/propertiesAction";
+import { wrapper } from "../redux/store";
 import { Layout } from "../components/Layout/Layout";
 import { BreadCrumbs } from "../components/Misc/BreadCrumbs";
 import { Property } from "../containers/Property";
@@ -19,3 +20,10 @@ const PropertiesPage = () => {
 };
 
 export default PropertiesPage;
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) =>
+    async ({ req }) => {
+      await store.dispatch(getAllProperties(req));
+    }
+);
