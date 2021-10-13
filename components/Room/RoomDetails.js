@@ -2,17 +2,18 @@
 // import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { DateRange } from "react-date-range";
+
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import Slider from "react-slick";
 import axios from "axios";
 import {
   clearErrors,
   checkBooking,
   getBookedDates,
 } from "../../redux/actions/bookingAction";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
 // import { CHECK_BOOKING_RESET } from "../../redux/constants/bookingConstant";
 
 import "slick-carousel/slick/slick.css";
@@ -20,22 +21,18 @@ import "slick-carousel/slick/slick-theme.css";
 import { RoomFeature } from "./RoomFeature";
 
 export const RoomDetails = () => {
-  const [date, setDate] = useState({
-    checkInDate: null,
-    checkOutDate: null,
-  });
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
   const router = useRouter();
   const { id } = router.query;
   const dispatch = useDispatch();
   const [daysOfStay, setDaysOfStay] = useState();
   const { user } = useSelector((state) => state.loadUser);
-  const { dates } = useSelector((state) => state.bookedDates);
-
-  const excludedDates = [];
-
-  dates.forEach((dateBook) => {
-    excludedDates.push(new Date(dateBook));
-  });
 
   const {
     room: { room: details },
@@ -46,35 +43,35 @@ export const RoomDetails = () => {
     (state) => state.checkBooking
   );
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  // };
 
   const onChange = (dates) => {
-    const [checkInDate, checkOutDate] = dates;
+    setDate([dates.selection]);
 
-    console.log(checkInDate, checkOutDate);
-
-    setDate({
-      checkInDate,
-      checkOutDate,
-    });
-
-    if (checkInDate && checkOutDate) {
+    if (dates.selection.startDate && dates.selection.endDate) {
       // CALCULATE DAYS OF STAY
-      // 86400000 => mili seconds in a day
+      const dateStart = new Date(dates.selection.startDate);
+      const endDates = new Date(dates.selection.endDate);
 
-      const days = Math.floor(
-        (new Date(checkOutDate) - new Date(checkInDate)) / 86400000 + 1
-      );
+      const differenceInTime = endDates.getTime() - dateStart.getTime();
+
+      const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+      const days = Math.floor(differenceInDays);
 
       setDaysOfStay(days);
       dispatch(
-        checkBooking(id, checkInDate.toISOString(), checkOutDate.toISOString())
+        checkBooking(
+          id,
+          dates.selection.startDate.toISOString(),
+          dates.selection.endDate.toISOString()
+        )
       );
     }
   };
@@ -82,8 +79,8 @@ export const RoomDetails = () => {
   const newBookingHandler = async () => {
     const bookingData = {
       room: router.query.id,
-      checkInDate: date.checkInDate,
-      checkOutDate: date.checkOutDate,
+      checkInDate: date[0].startDate,
+      checkOutDate: date[0].endDate,
       daysOfStay,
       amountPaid: 90,
       paymentInfo: {
@@ -131,93 +128,72 @@ export const RoomDetails = () => {
   }, [dispatch, id]);
 
   return (
-    <>
-      <div className="container container-fluid">
-        <h2 className="mt-5">{details.name}</h2>
-        <p>{details.address}</p>
+    <main className="max-w-6xl mx-auto py-32">
+      <div className="">
+        {/* <h2 className="">{details.name}</h2>
+        <p>{details.address}</p> */}
 
-        <div className="ratings mt-auto mb-3">
-          <div className="rating-outer">
-            <div className="rating-inner" />
-          </div>
-          <span id="no_of_reviews">
-            (
-            {`${details.numOfReviews} ${
-              details.numOfReviews > 1 ? "Reviews" : "Review"
-            }`}
-            )
-          </span>
-        </div>
+        {/* //TODO: IMAGE SLIDER CAROUSEL  */}
 
-        <Slider {...settings}>
-          {details.images.map((image) => {
-            const { _id: keyID } = image;
-            return (
-              <div key={keyID}>
-                <img
-                  src={image.url}
-                  className="d-block w-100 property-details-image m-auto"
-                  alt="Hotel"
-                />
-              </div>
-            );
-          })}
-        </Slider>
-
-        <div className="row my-5">
-          <div className="col-12 col-md-6 col-lg-8">
-            <h3>Description</h3>
-            <p>{details.description}</p>
+        {/* //TODO: FIX THIS LAYOUT LATER */}
+        <div className="flex flex-col md:flex-row space-y-10 justify-between px-4">
+          {/* DESCRIPTION */}
+          <div className=" flex flex-col md:w-[680px]">
+            <h3 className="text-2xl font-semibold text-indigo-600 py-3 px-1">
+              About the place.
+            </h3>
+            <p className="w-full p-1 break-words">{details.description}</p>
 
             <RoomFeature details={details} />
           </div>
 
-          <div className="col-12 col-md-6 col-lg-4">
-            <div className="booking-card shadow-lg p-4">
-              <p className="price-per-night">
-                <b>${details.pricePerNight}</b> / night
+          {/* BOOKING SECTION */}
+          <div className="w-[340px] flex flex-col group">
+            <div className="">
+              <h1 className="text-2xl font-semibold text-indigo-600 mb-4">
+                Start Booking.
+              </h1>
+              <p className="text-3xl text-gray-400 mb-5">
+                <span className="text-green-500 font-semibold">
+                  ${details.pricePerNight}
+                </span>{" "}
+                / night
               </p>
 
-              <hr />
-              <p className="mt-5 mb-3">Pick Check In & Check Out Date</p>
+              <p className="">Pick Check In & Check Out Date</p>
 
-              <DatePicker
-                className="w-100"
-                selected={date.checkInDate}
+              <DateRange
+                editableDateInputs
                 onChange={onChange}
-                startDate={date.checkInDate}
-                endDate={date.checkOutDate}
-                minDate={new Date()}
-                excludeDates={excludedDates}
-                selectsRange
-                inline
+                moveRangeOnFirstSelection={false}
+                ranges={date}
               />
 
               {available === true && (
-                <div className="alert alert-success my-3 font-weight-bold">
-                  Room is available. Book now.
+                <div className="flex items-center justify-center px-3 py-4 bg-gradient-to-br from-green-400 to-purple-400 text-white  rounded-md">
+                  <h1>Room is available. Book now.</h1>
                 </div>
               )}
 
               {available === false && (
-                <div className="alert alert-danger my-3 font-weight-bold">
+                <div className="">
                   Room is not available, Try different date
                 </div>
               )}
 
               {available && !user && (
-                <div className="alert alert-danger my-3 font-weight-bold">
-                  Login to book the reom
+                <div className="flex items-center">
+                  <h1>Login to book the reom</h1>
                 </div>
               )}
 
               {available && user && (
                 <button
-                  className="btn btn-block py-3 booking-btn"
+                  className="py-4 text-white bg-gradient-to-tr from-purple-400 to-red-500 w-full mt-5 rounded-md hover:from-purple-700 hover:to-red-400 transition ease-in duration-150"
                   onClick={newBookingHandler}
                   disabled={!!bookingLoading}
                 >
-                  Pay - ${daysOfStay * details.pricePerNight}
+                  Pay ${daysOfStay * details.pricePerNight}
                 </button>
               )}
             </div>
@@ -256,6 +232,33 @@ export const RoomDetails = () => {
           </div>
         )}
       </div>
-    </>
+    </main>
   );
 };
+
+/* <DatePicker
+className="w-100"
+selected={date.checkInDate}
+onChange={onChange}
+startDate={date.checkInDate}
+endDate={date.checkOutDate}
+minDate={new Date()}
+excludeDates={excludedDates}
+selectsRange
+inline
+/> */
+
+/* <Slider {...settings}>
+{details.images.map((image) => {
+  const { _id: keyID } = image;
+  return (
+    <div key={keyID}>
+      <img
+        src={image.url}
+        className="d-block w-100 property-details-image m-auto"
+        alt="Hotel"
+      />
+    </div>
+  );
+})}
+</Slider> */
