@@ -54,7 +54,13 @@ export const Header = () => {
             </a>
           </Link>
           <Link href="/properties" passHref>
-            <a className={`text-lg ${user && "px-2"}`}>Properties</a>
+            <a
+              className={`text-lg ${user && "px-2"} ${
+                router.pathname === "/properties" && "text-blue-500"
+              }`}
+            >
+              Properties
+            </a>
           </Link>
 
           {user ? (

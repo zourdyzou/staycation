@@ -4,12 +4,15 @@ const dbConnect = () => {
   if (mongoose.connection.readyState >= 1) return;
 
   mongoose
-    .connect(process.env.DB_LOCAL_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      // useFindAndModify: false,
-      // useCreateIndex: true,
-    })
+    .connect(
+      `mongodb+srv://${process.env.NEXT_PUBLIC_MONGO_USER}:${process.env.NEXT_PUBLIC_MONGO_PASSWORD}@${process.env.NEXT_PUBLIC_MONGO_DATABASE_NAME}.s2ajg.mongodb.net/Cluster0?retryWrites=true&w=majority`,
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        // useFindAndModify: false,
+        // useCreateIndex: true,
+      }
+    )
     .then((con) => console.log(`connected to local database ${con}`));
 };
 

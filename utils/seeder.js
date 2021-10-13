@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
-const properties = require("../data/properties.json");
+const properties = require("../data/rooms.json");
 
 // const dbConnect = require("../config/dbConnect");
 
-const Room = require("../models/properties");
+const Room = require("../models/room");
 
 // const Properties = require("../models/properties");
 
 mongoose.connect(
-  "mongodb+srv://brothergoode:OyTOj11THOLTCciu@cluster0.s2ajg.mongodb.net/Cluster0?retryWrites=true&w=majority",
+  `mongodb+srv://${process.env.NEXT_PUBLIC_MONGO_USER}:${process.env.NEXT_PUBLIC_MONGO_PASSWORD}@${process.env.NEXT_PUBLIC_MONGO_DATABASE_NAME}.s2ajg.mongodb.net/Cluster0?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
