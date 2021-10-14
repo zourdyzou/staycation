@@ -8,9 +8,12 @@ import { CardItem } from "./CardItem";
 export const CardFeatured = () => {
   const dispatch = useDispatch();
   const {
-    properties: { properties: data },
+    rooms: data,
+    // resPerPage,
+    // roomsCount,
+    // filteredRoomsCount,
     error,
-  } = useSelector((state) => state.allProperties);
+  } = useSelector((state) => state.allRooms);
 
   useEffect(() => {
     if (error) {
@@ -97,7 +100,7 @@ export const CardFeatured = () => {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-5 md:pl-10 w-full">
-        {data?.slice(1, 4).map((item) => {
+        {data?.slice(3, 6).map((item) => {
           const { _id: id } = item;
 
           // TODO=> change this later

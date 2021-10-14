@@ -60,18 +60,15 @@ export const getPropertiesReducer = (state = { properties: [] }, action) => {
   }
 };
 
-export const propertiesDetailReducer = (state = { property: {} }, action) => {
+export const propertiesDetailsReducer = (state = { property: {} }, action) => {
   switch (action.payload) {
     case PROPERTIES_DETAILS_SUCCESS:
       return {
-        loading: false,
         property: action.payload,
-        message: "DETAILS ABOUT PROPERTY",
       };
 
     case PROPERTIES_DETAILS_FAIL:
       return {
-        loading: false,
         error: action.payload,
       };
 

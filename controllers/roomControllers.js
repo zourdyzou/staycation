@@ -1,30 +1,31 @@
 import ErrorBoundary from "../utils/errorBoundary";
 import catchAsyncError from "../middlewares/catchAsyncError";
-import APIFeatures from "../utils/apiFeatures";
+// import APIFeatures from "../utils/apiFeatures";
 
 const Room = require("../models/room");
 
 // get all rooms => /api/rooms
 const allRooms = catchAsyncError(async (req, res) => {
-  const resPerPage = 4;
-  const roomsCount = await Room.countDocuments();
+  // const resPerPage = 4;
+  const rooms = await Room.find();
 
-  const apiFeatures = new APIFeatures(Room.find(), req.query).search().filter();
+  // const apiFeatures = new APIFeatures(Room.find(), req.query).search().filter();
 
   // pagination
-  let rooms = await apiFeatures.query;
-  let filteredRoomsCount = rooms.length;
+  // let rooms = await apiFeatures.query;
+  // let filteredRoomsCount = rooms.length;
 
-  apiFeatures.pagination(resPerPage);
-  rooms = await apiFeatures.query.clone();
+  // apiFeatures.pagination(resPerPage);
+  // rooms = await apiFeatures.query.clone();
 
   // console.log(Room.find().find());
 
   res.status(200).json({
     success: true,
-    roomsCount,
-    resPerPage,
-    filteredRoomsCount,
+    // roomsCount,
+    // resPerPage,
+    // filteredRoomsCount,
+    count: rooms.length,
     rooms,
   });
 });

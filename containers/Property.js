@@ -11,9 +11,12 @@ import { CardItem } from "../components/Card/CardItem";
 export const Property = () => {
   const dispatch = useDispatch();
   const {
-    properties: { properties: data },
+    rooms: data,
+    // resPerPage,
+    // roomsCount,
+    // filteredRoomsCount,
     error,
-  } = useSelector((state) => state.allProperties);
+  } = useSelector((state) => state.allRooms);
 
   const { page } = useSelector((state) => state.pagination);
 
@@ -64,6 +67,7 @@ export const Property = () => {
             return (
               <CardItem
                 key={id}
+                id={id}
                 title={item.name}
                 rating={newRating}
                 description={item.description}

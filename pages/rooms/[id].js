@@ -4,15 +4,18 @@ import { Layout } from "../../components/Layout/Layout";
 
 import { getRoomDetails } from "../../redux/actions/roomAction";
 import { wrapper } from "../../redux/store";
+import { BreadCrumbs } from "../../components/Misc/BreadCrumbs";
 
 export default function RoomDetailsPage() {
   const {
     room: { room: details },
+    error,
   } = useSelector((state) => state.roomDetails);
 
   return (
     <Layout title={`${details.name} | staycation.com`}>
-      <RoomDetails />
+      <BreadCrumbs link="Rooms" />
+      <RoomDetails error={error} details={details} />
     </Layout>
   );
 }

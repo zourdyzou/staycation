@@ -8,7 +8,7 @@ const Room = require("../models/room");
 // const Properties = require("../models/properties");
 
 mongoose.connect(
-  `mongodb+srv://${process.env.NEXT_PUBLIC_MONGO_USER}:${process.env.NEXT_PUBLIC_MONGO_PASSWORD}@${process.env.NEXT_PUBLIC_MONGO_DATABASE_NAME}.s2ajg.mongodb.net/Cluster0?retryWrites=true&w=majority`,
+  `mongodb+srv://brothergoode:OyTOj11THOLTCciu@cluster0.s2ajg.mongodb.net/Cluster0?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

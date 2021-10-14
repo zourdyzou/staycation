@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-// import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { DateRange } from "react-date-range";
+import Slider from "react-slick";
+import Image from "next/image";
 
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -14,13 +14,13 @@ import {
 } from "../../redux/actions/bookingAction";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
-// import { CHECK_BOOKING_RESET } from "../../redux/constants/bookingConstant";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// import { CHECK_BOOKING_RESET } from "../../redux/constants/bookingConstant";
+
 import { RoomFeature } from "./RoomFeature";
 
-export const RoomDetails = () => {
+export const RoomDetails = ({ error, details }) => {
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -34,22 +34,9 @@ export const RoomDetails = () => {
   const [daysOfStay, setDaysOfStay] = useState();
   const { user } = useSelector((state) => state.loadUser);
 
-  const {
-    room: { room: details },
-    error,
-  } = useSelector((state) => state.roomDetails);
-
   const { available, loading: bookingLoading } = useSelector(
     (state) => state.checkBooking
   );
-
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  // };
 
   const onChange = (dates) => {
     setDate([dates.selection]);
@@ -127,16 +114,49 @@ export const RoomDetails = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, id]);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    slickPlay: true,
+  };
+
   return (
     <main className="max-w-6xl mx-auto py-32">
-      <div className="">
-        {/* <h2 className="">{details.name}</h2>
-        <p>{details.address}</p> */}
+      <div className="flex flex-col px-2">
+        <div className="flex flex-col px-3 mb-10 space-y-2">
+          <h2 className="text-2xl md:text-3xl text-indigo-800 font-bold">
+            {details.name}
+          </h2>
+          <p className="text-lg text-gray-500">{details.address}</p>
+        </div>
 
         {/* //TODO: IMAGE SLIDER CAROUSEL  */}
+        <Slider {...settings} className="mb-16 px-2">
+          {details.images?.map((image) => {
+            const { _id: keyID } = image;
+            return (
+              <div
+                key={keyID}
+                className="relative h-[270px] sm:h-[430px] md:h-[650px] w-full"
+              >
+                <Image
+                  src={image.url}
+                  className=" rounded-md bg-cover bg-center"
+                  alt="Hotel"
+                  layout="fill"
+                />
+              </div>
+            );
+          })}
+        </Slider>
 
         {/* //TODO: FIX THIS LAYOUT LATER */}
-        <div className="flex flex-col md:flex-row space-y-10 justify-between px-4">
+        <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 justify-between px-4">
           {/* DESCRIPTION */}
           <div className=" flex flex-col md:w-[680px]">
             <h3 className="text-2xl font-semibold text-indigo-600 py-3 px-1">
@@ -247,18 +267,3 @@ excludeDates={excludedDates}
 selectsRange
 inline
 /> */
-
-/* <Slider {...settings}>
-{details.images.map((image) => {
-  const { _id: keyID } = image;
-  return (
-    <div key={keyID}>
-      <img
-        src={image.url}
-        className="d-block w-100 property-details-image m-auto"
-        alt="Hotel"
-      />
-    </div>
-  );
-})}
-</Slider> */

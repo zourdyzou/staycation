@@ -1,7 +1,6 @@
 import { Layout } from "../components/Layout/Layout";
 
 import { getRooms } from "../redux/actions/roomAction";
-import { getAllProperties } from "../redux/actions/propertiesAction";
 import { wrapper } from "../redux/store";
 
 import { Hero } from "../components/Layout/Hero";
@@ -40,7 +39,5 @@ export const getServerSideProps = wrapper.getServerSideProps(
       await store.dispatch(
         getRooms(req, query.page, query.location, query.guests, query.category)
       );
-
-      await store.dispatch(getAllProperties(req));
     }
 );

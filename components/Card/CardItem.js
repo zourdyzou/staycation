@@ -7,6 +7,7 @@ import {
 } from "@heroicons/react/outline";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export const CardItem = ({
   image,
@@ -15,6 +16,7 @@ export const CardItem = ({
   price,
   rating,
   location,
+  id,
 }) => {
   return (
     <CardContainer className="group cursor-pointer">
@@ -56,12 +58,14 @@ export const CardItem = ({
         <p className="pt-2 pb-5 text-base">{description.substring(0, 65)}...</p>
       </div>
 
-      <button
-        type="button"
-        className="rounded-md w-full bg-indigo-600 text-white hover:bg-indigo-900 transition ease-in duration-200 p-4 group-hover:underline"
-      >
-        View Details
-      </button>
+      <Link passHref href={`/rooms/${id}`}>
+        <button
+          type="button"
+          className="rounded-md w-full bg-indigo-600 text-white hover:bg-indigo-900 transition ease-in duration-200 p-4 group-hover:underline"
+        >
+          View Details
+        </button>
+      </Link>
     </CardContainer>
   );
 };
