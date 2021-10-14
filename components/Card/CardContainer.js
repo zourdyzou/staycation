@@ -118,6 +118,7 @@ export const CardFeatured = () => {
               location={item.address}
               price={item.pricePerNight}
               image={item.images[0].url}
+              id={id}
             />
           );
         })}

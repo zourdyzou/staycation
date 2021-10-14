@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seeder": "node utils/seeder"
+    "seeder": "node utils/seeder",
+    "export": "next export"
   },
   "dependencies": {
     "@emotion/react": "^11.4.1",
