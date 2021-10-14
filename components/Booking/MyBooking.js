@@ -29,7 +29,7 @@ export const MyBooking = () => {
       marginRight: 25,
       marginLeft: 25,
       marginBottom: 25,
-      logo: "https://res.cloudinary.com/bookit/image/upload/v1617904918/bookit/bookit_logo_cbgjzv.png",
+      logo: "https://res.cloudinary.com/zenlock/image/upload/v1634235144/booz_xt97jj.png",
       sender: {
         company: "Staycation",
         address: "13th Street. 47 W 13th St",
@@ -53,8 +53,7 @@ export const MyBooking = () => {
       products: [
         {
           quantity: `${booking.daysOfStay}`,
-          // description: `${booking.room.name}`,
-          description: "Pearl Hotel & Resort",
+          description: `${booking.room.name}`,
           tax: 0,
           price: booking.room.pricePerNight,
         },

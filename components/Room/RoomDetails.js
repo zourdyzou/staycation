@@ -255,15 +255,3 @@ export const RoomDetails = ({ error, details }) => {
     </main>
   );
 };
-
-/* <DatePicker
-className="w-100"
-selected={date.checkInDate}
-onChange={onChange}
-startDate={date.checkInDate}
-endDate={date.checkOutDate}
-minDate={new Date()}
-excludeDates={excludedDates}
-selectsRange
-inline
-/> */
