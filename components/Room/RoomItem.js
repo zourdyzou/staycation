@@ -4,9 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { StarIcon } from "@heroicons/react/solid";
 
-export const RoomItem = ({ images, name, pricePerNight, address, rating }) => {
+export const RoomItem = ({
+  pricePerNight,
+  images,
+  address,
+  rating,
+  id,
+  name,
+}) => {
   return (
-    <Link href="/" passHref>
+    <Link href={`/rooms/${id}`} passHref>
       <div className="relative hover:transform hover:-translate-y-3 rounded-xl group mt-5 md:mt-0 cursor-pointer transition duration-150 ease-in overflow-hidden">
         <div className="relative group-hover:rounded-xl h-[220px] w-72 brightness-75 overflow-hidden rounded-br-xl">
           <Image

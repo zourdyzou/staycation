@@ -10,9 +10,10 @@ export const PopularCard = ({
   pricePerNight,
   address,
   rating,
+  id,
 }) => {
   return (
-    <Link href="/" passHref>
+    <Link href={`/rooms/${id}`} passHref>
       <div className="relative rounded-xl group mt-5 md:mt-0 cursor-pointer transition duration-150 ease-in overflow-hidden">
         <div className="relative group-hover:rounded-xl h-[220px] w-72 brightness-75 overflow-hidden">
           <Image

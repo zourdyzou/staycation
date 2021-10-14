@@ -7,13 +7,10 @@ const Room = require("../models/room");
 
 // const Properties = require("../models/properties");
 
-mongoose.connect(
-  `mongodb+srv://brothergoode:OyTOj11THOLTCciu@cluster0.s2ajg.mongodb.net/Cluster0?retryWrites=true&w=majority`,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(`YOUR_MONGO_DB_SECRET_KEY`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const seedRooms = async () => {
   try {
