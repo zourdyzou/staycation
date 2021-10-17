@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/router";
-// import { getAllProperties } from "../../redux/actions/propertiesAction";
 
 import { getRooms } from "../../redux/actions/roomAction";
 import { wrapper } from "../../redux/store";

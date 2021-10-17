@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { Filter } from "../components/Misc/Filter";
-import { clearError } from "../redux/actions/propertiesAction";
+import { clearError } from "../redux/actions/userAction";
 import { Pagination } from "../components/Misc/Pagination";
 
 import { paginate } from "../utils/paginate";
@@ -42,12 +42,12 @@ export const Property = () => {
 
   return (
     <main className="max-w-6xl mx-auto">
-      <h2 className="text-indigo-600 text-2xl font-semibold py-16 px-4">
+      <h2 className="px-4 py-16 text-2xl font-semibold text-indigo-600">
         All Listed Property.
       </h2>
       <div className="flex flex-col">
         {/* FILTER & PAGINATION */}
-        <div className="flex justify-between items-center px-5 py-10">
+        <div className="flex items-center justify-between px-5 py-10">
           <Filter />
 
           {/* PAGINATION */}
