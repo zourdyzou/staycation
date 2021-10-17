@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
-import { clearError } from "../../redux/actions/propertiesAction";
+import { clearError } from "../../redux/actions/userAction";
 import { CardItem } from "./CardItem";
 
 export const CardFeatured = () => {
@@ -94,8 +94,8 @@ export const CardFeatured = () => {
   // ];
 
   return (
-    <section className="pt-6 mt-20 pb-10">
-      <h2 className="text-3xl font-semibold p-3 pb-5 text-indigo-800">
+    <section className="pt-6 pb-10 mt-20">
+      <h2 className="p-3 pb-5 text-3xl font-semibold text-indigo-800">
         Popular Hotels.
       </h2>
 
